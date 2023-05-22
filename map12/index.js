@@ -1,3 +1,5 @@
+//default location hardcoded due to my VPN taking it to the middle of death valley, ca.
+
 // map object
 const geoMap = {
 	coordinates: [36.11358, -115.16633],
@@ -6,7 +8,7 @@ const geoMap = {
 		//[58, 36.113-115.16633]
 	},
 	markers: {
-		name: ['Giada', 'Lawry Prime Rib', '888 Japanese BBQ']
+		//["Giordano's","Yard House", "Mon Ami Gabi", "Garrett Popcorn Shops"],
 	},
 
 	// build leafleworkMap
@@ -42,7 +44,7 @@ const geoMap = {
 	// add business markers
 	addMarkers() {
 		for (var i = 0; i < this.businesses.length; i++) {
-		this.markers = L.marker([//14.581598869567165, 121.01277918468358])
+		this.markers = L.marker([									//14.581598869567165, 121.01277918468358])
 			this.businesses[i].lat,
 			this.businesses[i].long,
         ])
@@ -130,13 +132,16 @@ document.getElementById('submit').addEventListener('click', async (event) => {
 function businessList() 
 	let resto = document.getElementById("restaurants").value;
 
-/*
-let longTi = [
-	[36.11489, -115.17232],
-	[36.11509, -115.15983],
-	[36.12292, -115.20772],
-]
-let polygon = L.polygon(longTi, {
+let fourData = document.getElementById('submit').addEventListener('click', async (event) => {
+	event.preventDefault()
+	let business = document.getElementById('business').value
+	let data = await getFoursquare(business)
+	geoMap.businesses = processBusinesses(data)
+	geoMap.addMarkers()
+})
+
+//let longTi = fourData
+let polygon = L.polygon(fourData, {
     color: 'blue',
     fill: false,
 }).addTo(geoMap)
