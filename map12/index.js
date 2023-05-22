@@ -87,9 +87,9 @@ async function getFoursquare(business) {
 		}
 	}
 	let limit = 5
-	let lat = geoMap.coordinates[0]
-	let lon = geoMap.coordinates[1]
-	let response = await fetch('https://api.foursquare.com/v3/places/search', options)			//`https://api.foursquare.com/v3/places/search?&query=${business}&limit=${limit}&ll=${lat}%2C${lon}`
+	let lat = [36.11358]//geoMap.coordinates[0]
+	let lon = [-115.16633]//geoMap.coordinates[1]
+	let response = await fetch(`https://api.foursquare.com/v3/places/search?&query=${business}&limit=${limit}&ll=${lat}%2C${lon}`, options)			//`https://api.foursquare.com/v3/places/search?&query=${business}&limit=${limit}&ll=${lat}%2C${lon}`
 	let data = await response.text()
 	let parsedData = JSON.parse(data)
 	let businesses = parsedData.results
@@ -126,7 +126,11 @@ document.getElementById('submit').addEventListener('click', async (event) => {
 	geoMap.businesses = processBusinesses(data)
 	geoMap.addMarkers()
 })
+/*
+function businessList() 
+	let resto = document.getElementById("restaurants").value;
 
+/*
 let longTi = [
 	[36.11489, -115.17232],
 	[36.11509, -115.15983],
@@ -143,3 +147,4 @@ const redPin = L.icon({
     iconSize: [38,38],
     iconAnchor: [19, 38]
 })
+*/
