@@ -1,44 +1,34 @@
-//default location hardcoded due to my VPN taking it to the middle of death valley, ca.
+//default location hardcoded due to my VPN taking the marker to the middle of death valley, ca.
 
 // map object
+
+//let coordinates = [36.11358, -115.16633]//.addTo(geoMap)
+
 const geoMap = {
-	coordinates: [36.11358, -115.16633],
-	businesses: [], //'Giada', 'Lawry Prime Rib', '888 Japanese BBQ' [36.11489, -115.17232],[36.11509, -115.15983],[36.12292, -115.20772],
-	map: { 
-		//[58, 36.113-115.16633]
-	},
-	markers: {
-		//["Giordano's","Yard House", "Mon Ami Gabi", "Garrett Popcorn Shops"],
-	},
+	coordinates: [],
+	businesses: [],
+	map: {},
+	markers: {},
 
 	// build leafleworkMap
     makeMap() {
 		this.map = L.map('map').setView([36.11358, -115.16633], 12); 
-        /*
-        ('map', {
-		center: this.coordinates,
-		zoom: 12,
-		});
-        */
+        
 		// add openstreetmap tiles
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution:
 			'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-		minZoom: '15',
+		minZoom: '14',
 		}).addTo(this.map)
 		
 		// create and add geolocation marker
-		const marker = L.marker([36.11358, -115.16633])//(this.coordinates) //([36.11358, -115.16633])
+		const marker = L.marker([36.11358, -115.16633])//(this.coordinates) 
 		marker
 		.addTo(this.map)
-		.bindPopup('<p1><b>This is where you are.</b><br>Enjoy & have fun!</p1>')
+		.bindPopup('<p1><b>You are here</b><br>Enjoy & have fun!</p1>')
 		.openPopup()
 		
-		/*
-		const marker = L.marker([36.11358, -115.16633]).addTo(map)
-			.bindPopup('A pretty CSS popup.<br> Easily customizable.')
-			.openPopup();
-		*/
+		
 	},
 
 	// add business markers
@@ -63,23 +53,7 @@ async function getCoords(){
 }
 
 // get foursquare businesses
-/*
-const fetch = require('node-fetch');
 
-const url = 'https://api.foursquare.com/v3/places/search';
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'fsq3AiTE9OgH4txTa01imhHb5C4I7KniJvFBcQpzIIFpu7Q='
-  }
-};
-
-fetch(url, options)
-  .then(res => res.json())
-  .then(json => console.log(json))
-  .catch(err => console.error('error:' + err));
-*/
 async function getFoursquare(business) {
 	const options = {
 		method: 'GET',
@@ -128,28 +102,17 @@ document.getElementById('submit').addEventListener('click', async (event) => {
 	geoMap.businesses = processBusinesses(data)
 	geoMap.addMarkers()
 })
+
+// vicinity business markers
+
 /*
-function businessList() 
-	let resto = document.getElementById("restaurants").value;
+const marks = L.layerGroup(business).addTo(geoMap)
 
-let fourData = document.getElementById('submit').addEventListener('click', async (event) => {
-	event.preventDefault()
-	let business = document.getElementById('business').value
-	let data = await getFoursquare(business)
-	geoMap.businesses = processBusinesses(data)
-	geoMap.addMarkers()
-})
-
-//let longTi = fourData
-let polygon = L.polygon(fourData, {
-    color: 'blue',
-    fill: false,
+let polygon =  L.polygon(marks, {
+	color: 'red',
+	fill: false,
 }).addTo(geoMap)
-
-// Create red pin marker
-const redPin = L.icon({
-    iconUrl: './assets/red-pin.png',
-    iconSize: [38,38],
-    iconAnchor: [19, 38]
-})
 */
+
+
+
