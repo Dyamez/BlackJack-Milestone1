@@ -1,5 +1,5 @@
 h1 {
-    color: goldenrod;
+    color: rgb(182, 182, 38);
 }
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -7,7 +7,7 @@ body {
     font-size: x-large;
     background-image: url(./assets/tablegame.jpg);
     background-size: cover;
-    color: rgb(146, 26, 26);
+    color: rgb(243, 246, 245);
     font-weight: bold;
     
 }
