@@ -1,17 +1,24 @@
 h1 {
-    margin-top: 300px;
-    margin-bottom: 50px;
-    color: rgb(182, 182, 38);
+    margin-top: 100px;
+    margin-bottom: 200px;
+    color: rgb(18, 0, 19);
 }
 body {
     font-family: "copperplate";
     text-align:center;
-    font-size: x-large;
-    background-image: url(./assets/pic.jpeg);
+    font-size: 300%;
+    background-image: url(./assets/pic2.jpeg);
     background-size: cover;
-    color: rgb(124, 7, 11);
+    color: rgb(190, 212, 22);
     font-weight: bold;
     
+}
+h6 {
+    color: red
+}
+
+.baraha {
+    color: violet
 }
 
 button {
@@ -30,14 +37,14 @@ button {
     margin-top: 50px
     
 }
-
-
 #talata {
     font-style: copperplate;
     font-weight: bold;
     
     
 }
-
+.sugarol {
+    color: gold
+}
 
 /*credit background image (vistapointe.net)

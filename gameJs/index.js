@@ -48,6 +48,7 @@ let kalawakan = {
 
  bagongBalasa = ()=>{
     if (kalawakan.buhay === true && kalawakan.panalo === false) {
+   // return kalawakan.buhay === true && kalawakan.panalo ==false; { 
         let tumpok = karambola()
         kalawakan.kabuuan += tumpok
         kalawakan.tumpok.push(tumpok)
