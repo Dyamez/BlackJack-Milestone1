@@ -27,8 +27,6 @@ const geoMap = {
 		.addTo(this.map)
 		.bindPopup('<p1><b>You are here</b><br>Enjoy & have fun!</p1>')
 		.openPopup()
-		
-		
 	},
 
 	// add business markers
@@ -102,6 +100,7 @@ document.getElementById('submit').addEventListener('click', async (event) => {
 	geoMap.businesses = processBusinesses(data)
 	geoMap.addMarkers()
 })
+//try codes
 
 // vicinity business markers
 
