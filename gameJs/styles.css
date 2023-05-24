@@ -1,11 +1,13 @@
 h1 {
+    margin-top: 300px;
+    margin-bottom: 50px;
     color: rgb(182, 182, 38);
 }
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "copperplate";
     text-align:center;
     font-size: x-large;
-    background-image: url(./assets/tablegame.jpg);
+    background-image: url(./assets/pic.jpeg);
     background-size: cover;
     color: rgb(243, 246, 245);
     font-weight: bold;
@@ -13,25 +15,26 @@ body {
 }
 
 button {
-    color: #016f32;
+    color: #f2f9f5;
     width: 150px;
-    background: goldenrod;
+    background: rgb(30, 122, 95);
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: bold;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     vertical-align: middle;
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-bottom: 2px;
-    margin-top: 2px
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 20px;
+    margin-top: 50px
     
 }
 
 
 #talata {
-    font-style: italic;
+    font-style: copperplate;
+    font-weight: bold;
     
     
 }
