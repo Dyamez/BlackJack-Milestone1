@@ -9,6 +9,7 @@ const geoMap = {
 	businesses: [],
 	map: {},
 	markers: {},
+	circle: [],
 
 	// build leafleworkMap
     makeMap() {
@@ -27,6 +28,14 @@ const geoMap = {
 		.addTo(this.map)
 		.bindPopup('<p1><b>You are here</b><br>Enjoy & have fun!</p1>')
 		.openPopup()
+
+		let circle = L.circle([36.11358, -115.16633], {
+			color: 'red',
+			fillColor: '#f03',
+			fillOpacity: 0.5,
+			radius: 100
+		}).addTo(this.map);
+
 	},
 
 	// add business markers
@@ -101,6 +110,8 @@ document.getElementById('submit').addEventListener('click', async (event) => {
 	geoMap.addMarkers()
 })
 //try codes
+
+
 
 // vicinity business markers
 
