@@ -1,9 +1,4 @@
 //default location hardcoded due to my VPN taking the marker to the middle of death valley, ca.
-
-// map object
-
-//let coordinates = [36.11358, -115.16633]//.addTo(geoMap)
-
 const geoMap = {
 	coordinates: [],
 	businesses: [],
@@ -11,11 +6,10 @@ const geoMap = {
 	markers: {},
 	circle: [],
 
-	// build leafleworkMap
+	// leaflet map
     makeMap() {
 		this.map = L.map('map').setView([36.11358, -115.16633], 12); 
         
-		// add openstreetmap tiles
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution:
 			'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -38,10 +32,10 @@ const geoMap = {
 
 	},
 
-	// add business markers
+	//markers
 	addMarkers() {
 		for (var i = 0; i < this.businesses.length; i++) {
-		this.markers = L.marker([									//14.581598869567165, 121.01277918468358])
+		this.markers = L.marker([						
 			this.businesses[i].lat,
 			this.businesses[i].long,
         ])
@@ -51,7 +45,7 @@ const geoMap = {
 	},
 }
 
-// get coordinates via geolocation api
+//coordinates via geolocation api
 async function getCoords(){
 	const pos = await new Promise((resolve, reject) => {
 		navigator.geolocation.getCurrentPosition(resolve, reject)
@@ -59,7 +53,7 @@ async function getCoords(){
 	return [pos.coords.latitude, pos.coords.longitude]
 }
 
-// get foursquare businesses
+//foursquare businesses
 
 async function getFoursquare(business) {
 	const options = {
@@ -72,14 +66,14 @@ async function getFoursquare(business) {
 	let limit = 5
 	let lat = [36.11358]//geoMap.coordinates[0]
 	let lon = [-115.16633]//geoMap.coordinates[1]
-	let response = await fetch(`https://api.foursquare.com/v3/places/search?&query=${business}&limit=${limit}&ll=${lat}%2C${lon}`, options)			//`https://api.foursquare.com/v3/places/search?&query=${business}&limit=${limit}&ll=${lat}%2C${lon}`
+	let response = await fetch(`https://api.foursquare.com/v3/places/search?&query=${business}&limit=${limit}&ll=${lat}%2C${lon}`, options)	
 	let data = await response.text()
 	let parsedData = JSON.parse(data)
 	let businesses = parsedData.results
 	return businesses
 }
 
-// process foursquare array
+//foursquare array
 function processBusinesses(data) {
 	let businesses = data.map((element) => {
 		let location = {
@@ -93,15 +87,14 @@ function processBusinesses(data) {
 }
 
 
-// event handlers
-// window load
+
 window.onload = async () => {
 	const coords = await getCoords()
 	geoMap.coordinates = coords
 	geoMap.makeMap()
 }
     
-// business submit button
+// submit button
 document.getElementById('submit').addEventListener('click', async (event) => {
 	event.preventDefault()
 	let business = document.getElementById('business').value
@@ -109,20 +102,5 @@ document.getElementById('submit').addEventListener('click', async (event) => {
 	geoMap.businesses = processBusinesses(data)
 	geoMap.addMarkers()
 })
-//try codes
-
-
-
-// vicinity business markers
-
-/*
-const marks = L.layerGroup(business).addTo(geoMap)
-
-let polygon =  L.polygon(marks, {
-	color: 'red',
-	fill: false,
-}).addTo(geoMap)
-*/
-
 
 
