@@ -10,7 +10,7 @@ let manlalaro = { pangalan: "🤑JavaNerd", barya: 223 }
 mgaSugarol.textContent = manlalaro.pangalan + ": 💰" + manlalaro.barya 
 
 let kalawakan = {
-    tumpok : [],                                                // empty array to be 'added to' by my defined functions.
+    tumpok : [],                                                // empty array to be 'added to' by my defined functions. Parent/child concept clicked for me during the fetch/api class.
     kabuuan : 0,
     panalo : false,                                             //booleans 
     buhay : false,                                              //booleans
@@ -22,7 +22,7 @@ let kalawakan = {
                                                                 //'Math.floor' was an included function of java I got the concept from scrimba & jschart youtube, since I would need to know how to round
                                                                 //the value i got from 'Math.random'. I don't remember it being discussed in class.
     return randomNumber >  10 ? 10 : randomNumber === 1 ? 11 : randomNumber 
-                                                                // this ^ concept of refactoring came from Sam, in one of our class. the shortcut "pulling all the tricks" as he called it.
+                                                                // this ^ concept of refactoring came from Sam Ferrante, in one of our class. the shortcut "pulling all the tricks" as he called it.
 }
 
  bagongLaro = ()=>{
@@ -33,7 +33,8 @@ let kalawakan = {
     kalawakan.tumpok = [unangBaraha, pangalawangBaraha]
     kalawakan.kabuuan = unangBaraha + pangalawangBaraha
     simula()
-    yeySnd.play()                                               //invocation of my sound snippet file.
+    yeySnd.play()
+    yeySnd.volume = 0.1                                               //invocation of my sound snippet file.
 }
 
  let simula = ()=>{
@@ -53,7 +54,7 @@ let kalawakan = {
         kalawakan.mensahe = "Better luck next time!"
         kalawakan.buhay = false
     }
-                                                                //desperately trying to refactor this 'for loop' like the previous loop, 
+                                                                //desperately trying to refactor this 'if/else'
                                                                 //but am unable to make it work.
     kathangTalata.textContent = kalawakan.mensahe               // line 58 is displaying the result in the HTML.
 
@@ -66,5 +67,6 @@ let kalawakan = {
         kalawakan.tumpok.push(tumpok)
         simula()
         bellSnd.play()
+        bellSnd.volume = 0.1
     }
 }
