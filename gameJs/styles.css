@@ -1,3 +1,7 @@
+.baraha {
+    color: violet
+}
+
 h1 {
     margin-top: 100px;
     margin-bottom: 200px;
@@ -6,7 +10,7 @@ h1 {
 body {
     font-family: "Arial";
     text-align:center;
-    font-size: 300%;
+    font-size: 150%;
     background-image: url(./assets/pic2.jpeg);
     background-size: cover;
     color: rgb(190, 212, 22);
@@ -17,13 +21,12 @@ h6 {
     color: red
 }
 
-.baraha {
-    color: violet
-}
+
+
 
 button {
     color: #f2f9f5;
-    width: 150px;
+    width: 200px;
     background: rgb(30, 122, 95);
     padding-top: 5px;
     padding-bottom: 5px;
