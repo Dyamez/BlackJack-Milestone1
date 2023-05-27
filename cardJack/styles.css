@@ -1,7 +1,7 @@
 #tagoMo img {
-    margin: 2px;
-    height: 170px;
-    width: 120px;
+    height: 175px;
+    width: 125px;
+    margin: 1px;
 }
 #barahaKo img {
     margin: 2px;
@@ -22,4 +22,9 @@ body {
     font-family: "Arial";
     text-align: center;
     font-weight: bold
+}
+#bioData img {
+    height: 175px;
+    width: 125px;
+    margin: 1px;
 }

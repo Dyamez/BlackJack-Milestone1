@@ -1,3 +1,5 @@
+window.onload = () => {latagan(), karambola(), umpisaLaro()}
+
 let tago; 
 let tumpok; 
 let patok = true;  
@@ -7,10 +9,9 @@ let unangBilang = 0;
 let baraha = 0;  
 
 let latagan = () => { 
-    let uri = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]; 
+    tumpok = [];
+    let uri = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];  // card assets taken from https://github.com/ImKennyYip/black-jack/tree/master/cards
     let kahulugan = ["C", "D", "H", "S"]; 
-    tumpok = []; 
-
     for (let i = 0; i < kahulugan.length; i++) {    
         for (let x = 0; x < uri.length; x++) {   
             tumpok.push(uri[x] + "-" + kahulugan[i]); 
@@ -33,9 +34,7 @@ let umpisaLaro = () => {
     tago = tumpok.pop(); 
     sumaTangero += kuhaSagot(tago); 
     unangBilang += kuhaTangero(tago); 
-    
     while  (sumaTangero < 17) {  
-        
         let tumpokPik = document.createElement("img"); 
         let papel = tumpok.pop();                          
         tumpokPik.src = "./assets/" + papel + ".png";       
@@ -63,7 +62,6 @@ let umpisaLaro = () => {
 let kuhaSagot = (papel) => {           
     let kaalaman = papel.split("-");         
     let halaga = kaalaman[0];            
-
     if (isNaN(halaga)) {             
         if (halaga == "A") {             
             return 11;
@@ -102,41 +100,35 @@ let tumpokPik = document.createElement("img");
     if (bawasTungga(akingBilang, baraha) > 21) {            
      patok = false;                                     
     }
-
 }
 
 let pirme = () => {                                                       
  sumaTangero = bawasTungga (sumaTangero, unangBilang);                   
     akingBilang = bawasTungga(akingBilang, baraha);                         
-
- patok = false;                                                     
+    patok = false;                                                     
     document.getElementById("tagoMo").src = "./assets/" + tago + ".png";   
     let mensahe = "";           
     if (akingBilang > 21) {         
-        mensahe = "You Lose!";  
+        mensahe = "Better luck next time, Partner!";  
     }
     else if  (sumaTangero > 21) {      
-        mensahe = "You win!";           
+        mensahe = "You Win! Congratulations.";           
     }
     else if (akingBilang == sumaTangero) {        
-        mensahe = "Tie!";                   
+        mensahe = "You are Even";                   
     }
     else if (akingBilang > sumaTangero) {         
-        mensahe = "You Win!";               
+        mensahe = "You Win! Congratulations";               
     }
     else if (akingBilang < sumaTangero) {        
-        mensahe = "You Lose!";              
+        mensahe = "Better luck next time, Stranger";              
     }
     document.getElementById("sumaTangeroTutal").innerText = sumaTangero;    
     document.getElementById("barahaKo").innerText = akingBilang;        
     document.getElementById("sugarol").innerText = mensahe;         
 }
 
-window.onload = () => {
-    latagan(); 
-    karambola();
-    umpisaLaro(); 
-}
+
 
 
 
