@@ -1,10 +1,10 @@
-let unangBilang = 0; //dealerAC
-let akingBilang = 0; //myS
-let sumaTangero = 0; //dealerS
-let baraha = 0; //myAC
-let patok = true;
-let tago;
-let tumpok;
+var sumaTangero = 0; //dealerS
+var akingBilang = 0; //myS
+var unangBilang = 0; //dealerAC
+var baraha = 0; //myAC
+var patok = true;
+var tago;
+var tumpok;
 
 let latagan = ()=>{
     tumpok = []
@@ -16,6 +16,9 @@ let latagan = ()=>{
         }
     }
 }
+
+console.log(latagan)
+
 let karambola = ()=>{
     for (let i = 0; i < tumpok.length; i++){
         let x = Math.floor(Math.random() * tumpok.length);
@@ -26,7 +29,7 @@ let karambola = ()=>{
     console.log(tumpok);
 }
 
-let umpisaLaro = ()=>{
+let umpisaLaro = ()=> {
     tago = tumpok.pop();
     sumaTangero += kuhaSagot(tago);
     unangBilang += kuhaTangero(tago);
@@ -39,6 +42,7 @@ let umpisaLaro = ()=>{
         document.getElementById("tangero").append(tumpokPik)
     }
     console.log(sumaTangero)
+    //console.log(umpisaLaro)
     
     for (let i = 0; i < 2; i++) {
         let tumpokPik = document.createElement("img");
@@ -68,31 +72,49 @@ let umpisaLaro = ()=>{
         akingBilang = bawasTungga(akingBilang, baraha);
         sapul = false;
         document.getElementById("tago").src = ".assets/" + tago + ".png"
-        
-    }
-
-
-
-
-
-
-
-
-/*
-
-    document.getElementById("tago").src = ".assets/" + tago + ".png";
-    patok = false;
-    sumaTangero = 
-
-
-
-document.getElementById("sumaTangero").innerText = sumaTangero;
-document.getElementById("baraha").innerText = baraha;
-document.getElementById("sumaTotal").innerText = mensahe;
-
-window.onload = ()=>{umpisaLaro(), karambola(), latagan()}
-
-let kuhaSagot = ()=>{
-    let laman = 
+        let mensahe = "";
+        if (akingBilang > 21) {
+            mensahe = "Better Luck Next Time!"
+        } else if (sumaTangero > 21){
+            mensahe = "You got Black Jack!"
+        } else if (akingBilang == sumaTangero){
+            mensahe = "You are Tied!"
+        } else if (akingBilang > sumaTangero){
+            mensahe = "You got Black Jack!"
+        }
+        else if (akingBilang < sumaTangero){
+            mensahe = "Better Luck Next Time!"
+        };
+        document.getElementById("sumaTangero").innerText = sumaTangero;
+        document.getElementById("barahaKo").innerText = akingBilang;
+        document.getElementById("sugarol").innerText = mensahe;
 }
-*/
+let kuhaSagot = (papel)=>{
+    let kaalaman = papel.split("-");
+    let halaga = kaalaman[0];
+    if (isNaN(halaga)) {
+        if (halaga == "A") {
+            return 11;
+        }
+        return 10;
+    }
+    return parseInt(halaga)
+}
+let kuhaTangero = (papel)=>{
+    if (papel[0] == "A"){
+        return 1;
+    }
+    return 0
+}
+let bawasTungga = (damiMo, damiNya)=> {
+    while (damiMo > 21 && damiNya > 0){
+        damiMo -= 10;
+        damiNya -= 1
+    }
+    return damiMo
+}
+window.onload = ()=>{
+    umpisaLaro();
+    karambola(); 
+    latagan()
+}
