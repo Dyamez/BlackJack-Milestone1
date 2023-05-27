@@ -13,13 +13,13 @@
     height: 60px;
     width: 110px;
 }
-@kuha {
+#kuha {
     font-size: 25px;
     height: 60px;
     width: 110px;
 }
 body {
     font-family: "Arial"
-    text-align: clearInterval;
+    text-align: center;
     font-weight: bold
 }
