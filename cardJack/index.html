@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Milestone Blackjack Class 10</title>
 </head>
 <body>
     <h1>Milestone Blackjack Class 10</h1>
-    <p id="talata">Try your Luck, Stranger!</p>
+    <h3 id="talata">Try your Luck, Stranger!</h3>
       
-          <p id="sumaTangeroTutal">Boss Card: </p>
-          <div id="tangero"><img id="tagoMo" src="./assets/hide.png"></div>
+          <h3 id="sumaTangeroTutal">Boss Card: <span></span></h3>
+          <div id="tangero">
+            <img id="tagoMo" src="./assets/hide.png">
+            </div>
         
-          <p id="barahaKo">Your Card:</p>
-          <p id="sumaTotal">Result:</p>
+            <h3>Your Card: <span id="barahaKo"></span></h3>
+          <div id="etoNa"></div>
+          <br>
+          <h3 id="sumaTotal">Result:</h3>
           <p id="bioData"></p>
-          <button id="umpisa">START BlackJack!</button><br>
-          <button id="kuha">Draw Card</button>
-          <p id="sugarol"></p>
+
+          <button id="kuha">Draw</button>
+          <br>
+          <button id="umpisa">Hit Me!</button>
+          
+          <h2 id="sugarol"></h2>
     <h6><p>Press the top button to start the game</p>
     <p>Press the 'Draw Card' button to deal the cards</p></h6>
     
@@ -28,12 +36,3 @@
     <script src="script.js"></script>   
 </body>
 </html>
-
-<!-- 
-let unangBilang = 0; //dealerAC
-let akingBilang = 0; //myS
-let sumaTangero = 0; //dealerS
-let baraha = 0; //myAC
-onclick="bagongLaro()"
- onclick="bagongBalasa()"
--->

@@ -13,5 +13,5 @@
 
 *concept linking audio file referenced from https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
 
-*additional resource i used was Scrimba youtube javascript tutorial as a refesher, https://www.youtube.com/watch?v=jS4aFq5-91M, and
-JScode https://www.youtube.com/watch?v=YLc97F8JTkE.
+*additional resource i used was Scrimba youtube javascript tutorial as a refesher, https://www.youtube.com/watch?v=jS4aFq5-91M, 
+Kenny Yip  https://www.youtube.com/watch?v=bMYCWccL-3U&t=1211s and JScode https://www.youtube.com/watch?v=YLc97F8JTkE.

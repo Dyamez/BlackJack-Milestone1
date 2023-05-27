@@ -15,6 +15,8 @@ let latagan = () => {
     for (let i = 0; i < kahulugan.length; i++) {    
         for (let x = 0; x < uri.length; x++) {   
             tumpok.push(uri[x] + "-" + kahulugan[i]); 
+           // bellSnd.play()
+            //bellSnd.volume = 0.1
         }
     }
      console.log(tumpok); 
@@ -40,7 +42,9 @@ let umpisaLaro = () => {
         tumpokPik.src = "./assets/" + papel + ".png";       
      sumaTangero += kuhaSagot(papel);                
         unangBilang += kuhaTangero(papel);                 
-        document.getElementById("tangero").append(tumpokPik);    
+        document.getElementById("tangero").append(tumpokPik);
+        //yeySnd.play()
+        //yeySnd.volume = 0.1      
     }
     console.log (sumaTangero);     
 
@@ -50,7 +54,7 @@ let umpisaLaro = () => {
         tumpokPik.src = "./assets/" + papel + ".png";       
         akingBilang += kuhaSagot(papel);                      
         baraha += kuhaTangero(papel);                 
-        document.getElementById("bioData").append(tumpokPik);  
+        document.getElementById("etoNa").append(tumpokPik);  //"bioData"
     }
 
     console.log(akingBilang);                                               
@@ -58,18 +62,12 @@ let umpisaLaro = () => {
     document.getElementById("kuha").addEventListener("click", pirme);    
 
 }
+    let kuhaSagot = (papel) => {
+    let halaga = papel.split("-")[0];
+    return isNaN(halaga) ? (halaga == "A" ? 11 : 10) : parseInt(halaga);
+    };
+  
 
-let kuhaSagot = (papel) => {           
-    let kaalaman = papel.split("-");         
-    let halaga = kaalaman[0];            
-    if (isNaN(halaga)) {             
-        if (halaga == "A") {             
-            return 11;
-        }
-        return 10;
-    }
-    return parseInt(halaga);
-}
 
 let kuhaTangero = (papel) => {       
     if (papel[0] == "A") {       
@@ -87,7 +85,7 @@ let bawasTungga = (damiMo, damiNya) => {
 }
 
 let palo = () => {        
-    if ( patok) {      
+    if (patok) {      
         return;
     }
 let tumpokPik = document.createElement("img");        
@@ -95,7 +93,7 @@ let tumpokPik = document.createElement("img");
     tumpokPik.src = "./assets/" + papel + ".png";           
     akingBilang += kuhaSagot(papel);                          
     baraha += kuhaTangero(papel);                     
-    document.getElementById("bioData").append(tumpokPik);  
+    document.getElementById("etoNa").append(tumpokPik);  //bioData
 
     if (bawasTungga(akingBilang, baraha) > 21) {            
      patok = false;                                     
@@ -103,7 +101,29 @@ let tumpokPik = document.createElement("img");
 }
 
 let pirme = () => {                                                       
- sumaTangero = bawasTungga (sumaTangero, unangBilang);                   
+        sumaTangero -= unangBilang;
+        akingBilang -= baraha;
+        patok = false;
+        document.getElementById("tagoMo").src = "./assets/" + tago + ".png";
+        let mensahe = akingBilang > 21 ? "Better luck next time, Partner!" : sumaTangero > 21 ? "You Win! Congratulations." : 
+            akingBilang === sumaTangero ? "You are Even" : 
+                akingBilang > sumaTangero ? "You Win! Congratulations" : "Better luck next time, Stranger";
+        
+        document.getElementById("sumaTangeroTutal").innerText = sumaTangero;    
+        document.getElementById("barahaKo").innerText = akingBilang;        
+        document.getElementById("sugarol").innerText = mensahe;         
+    }
+
+    document.getElementById("kuha").addEventListener("click", function() {
+    document.getElementById("tunog1").play();
+    });
+    document.getElementById("umpisa").addEventListener("click", function() {
+    document.getElementById("tunog2").play();
+    });
+      
+      
+/*
+sumaTangero = bawasTungga (sumaTangero, unangBilang);                   
     akingBilang = bawasTungga(akingBilang, baraha);                         
     patok = false;                                                     
     document.getElementById("tagoMo").src = "./assets/" + tago + ".png";   
@@ -123,10 +143,22 @@ let pirme = () => {
     else if (akingBilang < sumaTangero) {        
         mensahe = "Better luck next time, Stranger";              
     }
-    document.getElementById("sumaTangeroTutal").innerText = sumaTangero;    
-    document.getElementById("barahaKo").innerText = akingBilang;        
-    document.getElementById("sugarol").innerText = mensahe;         
+
+
+    let kuhaSagot = (papel) => {           
+    let kaalaman = papel.split("-");         
+    let halaga = kaalaman[0];            
+    if (isNaN(halaga)) {             
+        if (halaga == "A") {             
+            return 11;
+        }
+        return 10;
+    }
+    return parseInt(halaga);
 }
+*/
+
+
 
 
 
