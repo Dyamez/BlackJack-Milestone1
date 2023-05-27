@@ -19,7 +19,7 @@ let latagan = () => {
      console.log(tumpok); 
 }
 
-function karambola() { 
+let karambola = () => { 
     for (let i = 0; i < tumpok.length; i++) {  
         let x = Math.floor(Math.random() * tumpok.length); 
         let epal = tumpok[i]; 
@@ -29,9 +29,9 @@ function karambola() {
     console.log(tumpok);  
 }
 
-function umpisaLaro() { 
+let umpisaLaro = () => { 
     tago = tumpok.pop(); 
- sumaTangero += kuhaSagot(tago); 
+    sumaTangero += kuhaSagot(tago); 
     unangBilang += kuhaTangero(tago); 
     
     while  (sumaTangero < 17) {  
@@ -60,7 +60,7 @@ function umpisaLaro() {
 
 }
 
-function kuhaSagot(papel) {           
+let kuhaSagot = (papel) => {           
     let kaalaman = papel.split("-");         
     let halaga = kaalaman[0];            
 
@@ -73,14 +73,14 @@ function kuhaSagot(papel) {
     return parseInt(halaga);
 }
 
-function kuhaTangero(papel) {       
+let kuhaTangero = (papel) => {       
     if (papel[0] == "A") {       
         return 1;
     }
     return 0;
 }
 
-function bawasTungga(damiMo, damiNya) {         
+let bawasTungga = (damiMo, damiNya) => {         
     while (damiMo > 21 && damiNya > 0) {      
         damiMo -= 10;                                
         damiNya -= 1;                           
@@ -88,13 +88,11 @@ function bawasTungga(damiMo, damiNya) {
     return damiMo;                                   
 }
 
-
-function palo() {        
+let palo = () => {        
     if ( patok) {      
         return;
     }
-
-    let tumpokPik = document.createElement("img");        
+let tumpokPik = document.createElement("img");        
     let papel = tumpok.pop();                              
     tumpokPik.src = "./assets/" + papel + ".png";           
     akingBilang += kuhaSagot(papel);                          
@@ -107,7 +105,7 @@ function palo() {
 
 }
 
-function pirme() {                                                       
+let pirme = () => {                                                       
  sumaTangero = bawasTungga (sumaTangero, unangBilang);                   
     akingBilang = bawasTungga(akingBilang, baraha);                         
 
@@ -120,7 +118,6 @@ function pirme() {
     else if  (sumaTangero > 21) {      
         mensahe = "You win!";           
     }
-    //both you and dealer <= 21
     else if (akingBilang == sumaTangero) {        
         mensahe = "Tie!";                   
     }
@@ -130,7 +127,6 @@ function pirme() {
     else if (akingBilang < sumaTangero) {        
         mensahe = "You Lose!";              
     }
-
     document.getElementById("sumaTangeroTutal").innerText = sumaTangero;    
     document.getElementById("barahaKo").innerText = akingBilang;        
     document.getElementById("sugarol").innerText = mensahe;         
