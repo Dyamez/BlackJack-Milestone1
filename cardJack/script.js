@@ -7,7 +7,7 @@ var tago;
 var tumpok;
 
 let latagan = ()=>{
-    tumpok = []
+    tumpok = [];
     let kahulugan = ["C", "D", "H", "S"];
     let uri = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
     for (let i = 0; i < kahulugan.length; i++) {
@@ -17,14 +17,15 @@ let latagan = ()=>{
     }
 }
 
-console.log(latagan)
+console.log(tumpok)
 
 let karambola = ()=>{
     for (let i = 0; i < tumpok.length; i++){
         let x = Math.floor(Math.random() * tumpok.length);
+        let epal = tumpok[i]
         tumpok[i] = tumpok[x];
         tumpok[x] = epal;
-        let epal = tumpok[i]
+        
     }
     console.log(tumpok);
 }
@@ -36,7 +37,7 @@ let umpisaLaro = ()=> {
     while (sumaTangero < 17) {
         let tumpokPik = document.createElement("img");
         let papel  = tumpok.pop();  //card
-        tumpokPik.src = ".assets/" + papel + "png";
+        tumpokPik.src = ".assets/" + papel + ".png";
         sumaTangero += kuhaSagot(papel);
         unangBilang += kuhaTangero(papel);
         document.getElementById("tangero").append(tumpokPik)
@@ -50,28 +51,31 @@ let umpisaLaro = ()=> {
         tumpokPik.src = ".assets/" + papel + "png";
         sumaTangero += kuhaSagot(papel);
         unangBilang += kuhaTangero(papel);
-        document.getElementById("tangero").append(tumpokPik)
+        document.getElementById("bioData").append(tumpokPik)
     }
     console.log(akingBilang)
     document.getElementById("umpisa").addEventListener("click", palo);
     document.getElementById("kuha").addEventListener("click", pirme);
 }
-    const palo = ()=>{if (!sapul){return}
+    const palo = () => {
+        if (!patok) {
+            return;
+        }
     let tumpokPik = document.createElement("img");
         let papel  = tumpok.pop(); 
-        tumpokPik.src = ".assets/" + papel + "png";
-        sumaTangero += kuhaSagot(papel);
-        unangBilang += kuhaTangero(papel);
-        document.getElementById("tangero").append(tumpokPik)
+        tumpokPik.src = ".assets/" + papel + ".png";
+        akingBilang += kuhaSagot(papel);
+        baraha += kuhaTangero(papel);
+        document.getElementById("bioData").append(tumpokPik)
         if (bawasTungga(akingBilang, baraha) > 21){
-            sapul = false;
+            patok = false;
         }
 };
     let pirme = ()=>{
         sumaTangero = bawasTungga(sumaTangero, unangBilang);
         akingBilang = bawasTungga(akingBilang, baraha);
-        sapul = false;
-        document.getElementById("tago").src = ".assets/" + tago + ".png"
+        patok = false;
+        document.getElementById("tagoMo").src = ".assets/" + tago + ".png"
         let mensahe = "";
         if (akingBilang > 21) {
             mensahe = "Better Luck Next Time!"
@@ -85,7 +89,7 @@ let umpisaLaro = ()=> {
         else if (akingBilang < sumaTangero){
             mensahe = "Better Luck Next Time!"
         };
-        document.getElementById("sumaTangero").innerText = sumaTangero;
+        document.getElementById("sumaTangeroTutal").innerText = sumaTangero;
         document.getElementById("barahaKo").innerText = akingBilang;
         document.getElementById("sugarol").innerText = mensahe;
 }
@@ -98,15 +102,15 @@ let kuhaSagot = (papel)=>{
         }
         return 10;
     }
-    return parseInt(halaga)
+    return parseInt(halaga)         //converts string to integer
 }
-let kuhaTangero = (papel)=>{
+function kuhaTangero(papel) {
     if (papel[0] == "A"){
         return 1;
     }
     return 0
 }
-let bawasTungga = (damiMo, damiNya)=> {
+function bawasTungga(damiMo, damiNya) {
     while (damiMo > 21 && damiNya > 0){
         damiMo -= 10;
         damiNya -= 1
