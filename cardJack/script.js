@@ -56,13 +56,12 @@ let umpisaLaro = () => {
         baraha += kuhaTangero(papel);                 
         document.getElementById("etoNa").append(tumpokPik);  //"bioData"
     }
-
     console.log(akingBilang);                                               
     document.getElementById("umpisa").addEventListener("click", palo);      
     document.getElementById("kuha").addEventListener("click", pirme);    
-
 }
-    let kuhaSagot = (papel) => {
+    
+let kuhaSagot = (papel) => {
     let halaga = papel.split("-")[0];
     return isNaN(halaga) ? (halaga == "A" ? 11 : 10) : parseInt(halaga);
     };
@@ -119,51 +118,4 @@ let pirme = () => {
     });
     document.getElementById("umpisa").addEventListener("click", function() {
     document.getElementById("tunog2").play();
-    });
-      
-      
-/*
-sumaTangero = bawasTungga (sumaTangero, unangBilang);                   
-    akingBilang = bawasTungga(akingBilang, baraha);                         
-    patok = false;                                                     
-    document.getElementById("tagoMo").src = "./assets/" + tago + ".png";   
-    let mensahe = "";           
-    if (akingBilang > 21) {         
-        mensahe = "Better luck next time, Partner!";  
-    }
-    else if  (sumaTangero > 21) {      
-        mensahe = "You Win! Congratulations.";           
-    }
-    else if (akingBilang == sumaTangero) {        
-        mensahe = "You are Even";                   
-    }
-    else if (akingBilang > sumaTangero) {         
-        mensahe = "You Win! Congratulations";               
-    }
-    else if (akingBilang < sumaTangero) {        
-        mensahe = "Better luck next time, Stranger";              
-    }
-
-
-    let kuhaSagot = (papel) => {           
-    let kaalaman = papel.split("-");         
-    let halaga = kaalaman[0];            
-    if (isNaN(halaga)) {             
-        if (halaga == "A") {             
-            return 11;
-        }
-        return 10;
-    }
-    return parseInt(halaga);
-}
-*/
-
-
-
-
-
-
-
-
-
-
+    })
