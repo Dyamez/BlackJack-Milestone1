@@ -38,6 +38,38 @@ let umpisaLaro = ()=>{
         unangBilang += kuhaTangero(papel);
         document.getElementById("tangero").append(tumpokPik)
     }
+    console.log(sumaTangero)
+    
+    for (let i = 0; i < 2; i++) {
+        let tumpokPik = document.createElement("img");
+        let papel  = tumpok.pop(); 
+        tumpokPik.src = ".assets/" + papel + "png";
+        sumaTangero += kuhaSagot(papel);
+        unangBilang += kuhaTangero(papel);
+        document.getElementById("tangero").append(tumpokPik)
+    }
+    console.log(akingBilang)
+    document.getElementById("umpisa").addEventListener("click", palo);
+    document.getElementById("kuha").addEventListener("click", pirme);
+}
+    const palo = ()=>{if (!sapul){return}
+    let tumpokPik = document.createElement("img");
+        let papel  = tumpok.pop(); 
+        tumpokPik.src = ".assets/" + papel + "png";
+        sumaTangero += kuhaSagot(papel);
+        unangBilang += kuhaTangero(papel);
+        document.getElementById("tangero").append(tumpokPik)
+        if (bawasTungga(akingBilang, baraha) > 21){
+            sapul = false;
+        }
+};
+    let pirme = ()=>{
+        sumaTangero = bawasTungga(sumaTangero, unangBilang);
+        akingBilang = bawasTungga(akingBilang, baraha);
+        sapul = false;
+        document.getElementById("tago").src = ".assets/" + tago + ".png"
+        
+    }
 
 
 
@@ -46,11 +78,12 @@ let umpisaLaro = ()=>{
 
 
 
+/*
 
     document.getElementById("tago").src = ".assets/" + tago + ".png";
     patok = false;
     sumaTangero = 
-}
+
 
 
 document.getElementById("sumaTangero").innerText = sumaTangero;
@@ -62,4 +95,4 @@ window.onload = ()=>{umpisaLaro(), karambola(), latagan()}
 let kuhaSagot = ()=>{
     let laman = 
 }
-
+*/
