@@ -4,10 +4,24 @@ function refreshPage() {
     location.reload();
 }
 
-window.addEventListener('load', function() {
-    let musikaLaro = document.getElementById("musika");                                                 //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
-    musika.play();
-});
+document.addEventListener('DOMContentLoaded', () => {                                                   //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
+    let audio = new Audio();
+    audio.src = "assets/LightsOfLasVegas.mp3";
+    audio.loop = true;
+
+    audio.addEventListener('canplaythrough', () => {
+      audio.play();
+    });
+  });
+
+  document.getElementById("kuha").addEventListener("click", function() {                                //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
+    document.getElementById("tunog1").play();
+    volume = 0.1                                                                                        //sound file snippets credit: https://mixkit.co/
+    });
+    document.getElementById("umpisa").addEventListener("click", function() {
+    document.getElementById("tunog2").play();
+    volume = 0.1
+    })
 
 let tago; 
 let tumpok; 
@@ -122,13 +136,4 @@ let pirme = () => {
         document.getElementById("barahaKo").innerText = akingBilang;        
         document.getElementById("sugarol").innerText = mensahe;         
     }
-
-    document.getElementById("kuha").addEventListener("click", function() {                                                              //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
-    document.getElementById("tunog1").play();
-    volume = 0.1                                                                                                                        //sound files credit: https://mixkit.co/
-    });
-    document.getElementById("umpisa").addEventListener("click", function() {
-    document.getElementById("tunog2").play();
-    volume = 0.1
-    })
       
