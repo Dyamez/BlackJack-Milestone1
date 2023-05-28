@@ -2,7 +2,8 @@ A simple java game of Blackjack.
 Player closest to 21 wins. Going over 21, dealer or player loses. A Tie results in player loss.
 
 Directions are to press the 'Hit Me!' button to start the game.
-The 'Draw' button is to deal cards for the player, which just continues even after results are given.
+The 'Hit Me!' button is to deal cards for the player, which just continues even after results are given.
+'Stay' button reveals the dealers hand.
 'new game' button refreshes the page to set up a fresh round.
 
     
@@ -17,9 +18,15 @@ The 'Draw' button is to deal cards for the player, which just continues even aft
 
 *Background photo used in this project is mine and was taken with my phone. '😉' 
 
-*sound files credit: https://mixkit.co/
+*sound files snippets credit: https://mixkit.co/
+ Music credit: Lights of Las Vegas by Yuri Sazonoff, 2010.
 
 *concept linking audio file referenced from https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click
 
 *additional resource i used was Scrimba youtube javascript tutorial as a refesher, https://www.youtube.com/watch?v=jS4aFq5-91M, 
 Kenny Yip  https://www.youtube.com/watch?v=bMYCWccL-3U&t=1211s and JScode https://www.youtube.com/watch?v=YLc97F8JTkE.
+
+*emoji credit: https://emojipedia.org/
+
+*bugs: known issue, audio music (mp3) wont play on safari ios or android chrome browser served from javascript due to its limitations. 
+    No issue on chrome or edge on windows. Not tested on Mac. https://stackoverflow.com/questions/2240710/how-to-get-mp3-files-to-play-in-iphone-safari-web-browser

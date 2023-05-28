@@ -1,5 +1,14 @@
 window.onload = () => {latagan(), karambola(), umpisaLaro()}                                            // I made up my own object names in my native tongue to be unique.
 
+function refreshPage() {
+    location.reload();
+}
+
+window.addEventListener('load', function() {
+    let musikaLaro = document.getElementById("musika");                                                 //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
+    musika.play();
+});
+
 let tago; 
 let tumpok; 
 let patok = true;  
@@ -116,13 +125,10 @@ let pirme = () => {
 
     document.getElementById("kuha").addEventListener("click", function() {                                                              //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
     document.getElementById("tunog1").play();
-    volume = 0.1
+    volume = 0.1                                                                                                                        //sound files credit: https://mixkit.co/
     });
     document.getElementById("umpisa").addEventListener("click", function() {
     document.getElementById("tunog2").play();
     volume = 0.1
     })
-
-    function refreshPage() {
-        location.reload();
-      }
+      
