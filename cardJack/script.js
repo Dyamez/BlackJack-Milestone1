@@ -1,4 +1,4 @@
-window.onload = () => {latagan(), karambola(), umpisaLaro()}                                            // I made up my own object names in my native tongue to be unique. referenced in the readMe.
+window.onload = () => {latagan(), karambola(), umpisaLaro()}                                            // I made up my own object names in my native tongue to be unique.
 
 let tago; 
 let tumpok; 
@@ -8,10 +8,15 @@ let akingBilang = 0;
 let unangBilang = 0; 
 let baraha = 0;  
 
-let latagan = () => {                                                                                   //this function sets the assets up then pushes it into the card array I defined here as 'tumpok'. 
-    tumpok = [];
-    let uri = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];                       // card assets taken from https://github.com/ImKennyYip/black-jack/tree/master/cards
-    let kahulugan = ["C", "D", "H", "S"]; 
+let linya = {
+    isa: ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"],                            
+    dalawa: ["C", "D", "H", "S"]
+}
+
+let latagan = () => {                                                                                   //this function sets the card assets, then pushes it into the card array I defined here as 'tumpok'. 
+    tumpok = [];                                                                                        // card assets taken from https://github.com/ImKennyYip/black-jack/tree/master/cards
+    let uri = linya.isa;
+    let kahulugan = linya.dalawa;
     for (let i = 0; i < kahulugan.length; i++) {                                                        // The video allowed me to understand how to set up numerous items for it to be passed on to my randomise function 'karambola'
         for (let x = 0; x < uri.length; x++) {                                                          
             tumpok.push(uri[x] + "-" + kahulugan[i]); 
@@ -30,11 +35,11 @@ let karambola = () => {
     console.log(tumpok);  
 }
 
-let umpisaLaro = () => {                                                                                // I would use and arrow function rather than the usual function as I find it more unique.
+let umpisaLaro = () => {                                                                                // I prefer the arrow function rather than the usual function.
     tago = tumpok.pop(); 
     sumaTangero += kuhaSagot(tago); 
     unangBilang += kuhaTangero(tago); 
-    while  (sumaTangero < 17) {                                                                         // <- this was just putting into practice what was taught to us in class 10 such as .pop, document.etc, & DNR with the use of +=
+    while  (sumaTangero < 17) {                                                                         // <- this was putting into practice what was taught to us in class 10 such as .pop, document.etc, & DNR with the use of +=
         let tumpokPik = document.createElement("img"); 
         let papel = tumpok.pop();                          
         tumpokPik.src = "./assets/" + papel + ".png";       
@@ -80,7 +85,7 @@ let bawasTungga = (damiMo, damiNya) => {
 }
 
 let palo = () => {        
-    if (patok) {      
+    if (!patok) {      
         return;
     }
 let tumpokPik = document.createElement("img");        
@@ -111,9 +116,11 @@ let pirme = () => {
 
     document.getElementById("kuha").addEventListener("click", function() {                                                              //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
     document.getElementById("tunog1").play();
+    volume = 0.1
     });
     document.getElementById("umpisa").addEventListener("click", function() {
     document.getElementById("tunog2").play();
+    volume = 0.1
     })
 
     function refreshPage() {
