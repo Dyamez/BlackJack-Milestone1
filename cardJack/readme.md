@@ -1,3 +1,11 @@
+A simple java game of Blackjack.
+Directions are to press the Draw button to start the game.
+The hit me is to get more randomised cards for the player, which just continues even after results are given.
+'new game' button refreshes the page to set up a fresh round.
+
+    *Bugs are that is just goes on and draws another card even after results are in, usually in the first press of
+    the 'draw' button. 
+
 *Inspired to make such a card game as it was one of the first tutorial I followed learning java on my own prior to this bootcamp.
 
 *Variables/codes have been written in 'Tagalog' words which i found to aid me in further learning coding in general.
