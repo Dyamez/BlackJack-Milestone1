@@ -1,11 +1,11 @@
 A simple java game of Blackjack.
-Directions are to press the Draw button to start the game.
-The hit me is to get more randomised cards for the player, which just continues even after results are given.
+Player closest to 21 wins. Going over 21, dealer or player loses. A Tie results in player loss.
+
+Directions are to press the 'Hit Me!' button to start the game.
+The 'Draw' button is to deal cards for the player, which just continues even after results are given.
 'new game' button refreshes the page to set up a fresh round.
 
-    *Bugs are that is just goes on and draws another card even after results are in, usually in the first press of
-    the 'draw' button. 
-
+    
 *Inspired to make such a card game as it was one of the first tutorial I followed learning java on my own prior to this bootcamp.
 
 *Variables/codes have been written in 'Tagalog' words which i found to aid me in further learning coding in general.
@@ -15,7 +15,7 @@ The hit me is to get more randomised cards for the player, which just continues 
 *Most are learned form the JS course here on Class10 such as         declarations, functions, refactoring etc...
     otherwise citations are made from other sources.
 
-*Background photo used in this project is mine and was taken with my phone. 'Insert smiley face' 
+*Background photo used in this project is mine and was taken with my phone. '😉' 
 
 *sound files credit: https://mixkit.co/
 
