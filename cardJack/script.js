@@ -1,4 +1,4 @@
-window.onload = () => {latagan(), karambola(), umpisaLaro()}                                            // I made up my own object names in my native tongue and just to be unique. referenced in the readMe.
+window.onload = () => {latagan(), karambola(), umpisaLaro()}                                            // I made up my own object names in my native tongue to be unique. referenced in the readMe.
 
 let tago; 
 let tumpok; 
@@ -8,12 +8,12 @@ let akingBilang = 0;
 let unangBilang = 0; 
 let baraha = 0;  
 
-let latagan = () => { 
+let latagan = () => {                                                                                   //this function sets the assets up then pushes it into the card array I defined here as 'tumpok'. 
     tumpok = [];
     let uri = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];                       // card assets taken from https://github.com/ImKennyYip/black-jack/tree/master/cards
     let kahulugan = ["C", "D", "H", "S"]; 
-    for (let i = 0; i < kahulugan.length; i++) {    
-        for (let x = 0; x < uri.length; x++) {   
+    for (let i = 0; i < kahulugan.length; i++) {                                                        // The video allowed me to understand how to set up numerous items for it to be passed on to my randomise function 'karambola'
+        for (let x = 0; x < uri.length; x++) {                                                          
             tumpok.push(uri[x] + "-" + kahulugan[i]); 
         }
     }
@@ -21,7 +21,7 @@ let latagan = () => {
 }
 
 let karambola = () => { 
-    for (let i = 0; i < tumpok.length; i++) {                                                           // the idea of using for loops was discussed in class and is applied here, but for me to round of numbers with 'Math.floor', I referred to in scrimba. https://www.youtube.com/watch?v=jS4aFq5-91M
+    for (let i = 0; i < tumpok.length; i++) {                                                           // the idea of using for loops was discussed in class and is applied here, but for me to round of numbers with 'Math.floor', I referred to in scrimba. https://scrimba.com/playlist/p3py7U7
         let x = Math.floor(Math.random() * tumpok.length); 
         let epal = tumpok[i]; 
         tumpok[i] = tumpok[x]; 
@@ -34,7 +34,7 @@ let umpisaLaro = () => {                                                        
     tago = tumpok.pop(); 
     sumaTangero += kuhaSagot(tago); 
     unangBilang += kuhaTangero(tago); 
-    while  (sumaTangero < 17) {  
+    while  (sumaTangero < 17) {                                                                         // <- this was just putting into practice what was taught to us in class 10 such as .pop, document.etc, & DNR with the use of +=
         let tumpokPik = document.createElement("img"); 
         let papel = tumpok.pop();                          
         tumpokPik.src = "./assets/" + papel + ".png";       
@@ -44,22 +44,22 @@ let umpisaLaro = () => {                                                        
     }
     console.log (sumaTangero);     
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) {                                                                       // This part is to set-up the Player card and the previous is for the Dealer.
         let tumpokPik = document.createElement("img"); 
-        let papel = tumpok.pop();                          
+        let papel = tumpok.pop();                                               
         tumpokPik.src = "./assets/" + papel + ".png";       
         akingBilang += kuhaSagot(papel);                      
         baraha += kuhaTangero(papel);                 
         document.getElementById("etoNa").append(tumpokPik);
     }
     console.log(akingBilang);                                               
-    document.getElementById("umpisa").addEventListener("click", palo);      
+    document.getElementById("umpisa").addEventListener("click", palo);                                  //Button event Listener for start(palo) & draw(pirme)
     document.getElementById("kuha").addEventListener("click", pirme);    
 }
     
 let kuhaSagot = (papel) => {
     let halaga = papel.split("-")[0];
-    return isNaN(halaga) ? (halaga == "A" ? 11 : 10) : parseInt(halaga);
+    return isNaN(halaga) ? (halaga == "A" ? 11 : 10) : parseInt(halaga);                                //parseInt() string to integer is a concept i dont recall being dicussed. I had to refer to several resources stated on my readMe such as kenny Yip, ChartJS and scrimba.
     };
   
 
