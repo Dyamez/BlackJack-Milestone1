@@ -1,5 +1,5 @@
 A simple java game of Blackjack.
-Player closest to 21 wins. Going over 21, dealer or player loses. A Tie results in player loss.
+Player closest to 21 wins. Going over 21, dealer or player loses.
 
 Directions are to press the 'Hit Me!' button to start the game.
 The 'Hit Me!' button is to deal cards for the player, which just continues even after results are given.
