@@ -5,7 +5,7 @@ Directions are to press the 'Hit Me!' button to start the game.
 The 'Hit Me!' button is to deal cards for the player, which just continues even after results are given.
 'Stay' button reveals the dealers hand.
 'new game' button refreshes the page to set up a fresh round.
-
+    -All assets loaded when served through local host server by way of vsCode.
     
 *Inspired to make such a card game as it was one of the first tutorial I followed learning java on my own prior to this bootcamp.
 
