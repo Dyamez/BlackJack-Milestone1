@@ -1,27 +1,4 @@
-window.onload = () => {latagan(), karambola(), umpisaLaro()}                                            // I made up my own object names in my native tongue to be unique.
-
-function refreshPage() {
-    location.reload();
-}
-
-document.addEventListener('DOMContentLoaded', () => {                                                   //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
-    let audio = new Audio();
-    audio.src = "assets/LightsOfLasVegas.mp3";
-    audio.loop = true;
-
-    audio.addEventListener('canplaythrough', () => {
-      audio.play();
-    });
-  });
-
-  document.getElementById("kuha").addEventListener("click", function() {                                //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
-    document.getElementById("tunog1").play();
-    volume = 0.1                                                                                        //sound file snippets credit: https://mixkit.co/
-    });
-    document.getElementById("umpisa").addEventListener("click", function() {
-    document.getElementById("tunog2").play();
-    volume = 0.1
-    })
+window.onload = () => {latagan(), karambola(), umpisaLaro()}                                            // I made up most object names in my native tongue to be unique.
 
 let tago; 
 let tumpok; 
@@ -30,11 +7,59 @@ let sumaTangero = 0;
 let akingBilang = 0;  
 let unangBilang = 0; 
 let baraha = 0;  
-
+let isMuted = false;
+const muteButton = document.getElementById('muteButton');
+const audio = document.getElementById('audio');
 let linya = {
     isa: ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"],                            
     dalawa: ["C", "D", "H", "S"]
 }
+
+  document.addEventListener('DOMContentLoaded', () => {                                                 //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
+    let audio = new Audio();
+    audio.src = "assets/LightsOfLasVegas.mp3";
+    audio.loop = true;
+  
+    audio.addEventListener('canplaythrough', () => {
+      audio.play();
+    });
+    const muteButton = document.getElementById('muteButton');
+    let isMuted = false;
+  
+    muteButton.addEventListener('click', () => {
+      if (isMuted) {
+        audio.muted = false;
+        muteButton.textContent = 'Mute';
+      } else {
+        audio.muted = true;
+        muteButton.textContent = 'Unmute';
+      }
+      isMuted = !isMuted;
+    });
+ });
+    muteButton.addEventListener('click', () => {
+    if (isMuted) {
+        audio.muted = false;
+        muteButton.textContent = 'Mute';
+    } else {
+        audio.muted = true;
+        muteButton.textContent = 'Unmute';
+    }
+    isMuted = !isMuted;
+    });
+    
+    document.getElementById("kuha").addEventListener("click", function() {                                //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
+    document.getElementById("tunog1").play();
+    volume = 0.1                                                                                          //sound file snippets credit: https://mixkit.co/
+    });
+    document.getElementById("umpisa").addEventListener("click", function() {
+    document.getElementById("tunog2").play();
+    volume = 0.1
+    })
+
+    function refreshPage() {
+        location.reload();
+    }
 
 let latagan = () => {                                                                                   //this function sets the card assets, then pushes it into the card array I defined here as 'tumpok'. 
     tumpok = [];                                                                                        // card assets taken from https://github.com/ImKennyYip/black-jack/tree/master/cards
@@ -136,4 +161,3 @@ let pirme = () => {
         document.getElementById("barahaKo").innerText = akingBilang;        
         document.getElementById("sugarol").innerText = mensahe;         
     }
-      
