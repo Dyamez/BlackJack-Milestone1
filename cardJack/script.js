@@ -14,14 +14,18 @@ let linya = {
     isa: ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"],                            
     dalawa: ["C", "D", "H", "S"]
 }
+let refreshPage = () => {
+    location.reload();
+}
 
   document.addEventListener('DOMContentLoaded', () => {                                                 //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
-    let audio = new Audio();
+    const audio = new Audio();
     audio.src = "assets/LightsOfLasVegas.mp3";
     audio.loop = true;
   
     audio.addEventListener('canplaythrough', () => {
       audio.play();
+      audio.volume = 0.4;
     });
     const muteButton = document.getElementById('muteButton');
     let isMuted = false;
@@ -48,19 +52,18 @@ let linya = {
     isMuted = !isMuted;
     });
     
-    document.getElementById("kuha").addEventListener("click", function() {                                //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
-    document.getElementById("tunog1").play();
-    volume = 0.1                                                                                          //sound file snippets credit: https://mixkit.co/
-    });
-    document.getElementById("umpisa").addEventListener("click", function() {
-    document.getElementById("tunog2").play();
-    volume = 0.1
+    document.getElementById("kuha").addEventListener("click", () => {                                       //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
+        const audio = document.getElementById("tunog1");                                                    //sound file snippets credit: https://mixkit.co/
+        audio.volume = 0.4;
+        audio.play();
+      });
+
+    document.getElementById("umpisa").addEventListener("click", () => { 
+        const audio = document.getElementById("tunog2");
+        audio.volume = 0.4;
+        audio.play()
     })
-
-    function refreshPage() {
-        location.reload();
-    }
-
+      
 let latagan = () => {                                                                                   //this function sets the card assets, then pushes it into the card array I defined here as 'tumpok'. 
     tumpok = [];                                                                                        // card assets taken from https://github.com/ImKennyYip/black-jack/tree/master/cards
     let uri = linya.isa;
@@ -115,8 +118,6 @@ let kuhaSagot = (papel) => {
     return isNaN(halaga) ? (halaga == "A" ? 11 : 10) : parseInt(halaga);                                //parseInt() string to integer is a concept i dont recall being dicussed. I had to refer to several resources stated on my readMe such as kenny Yip, ChartJS and scrimba.
     };
   
-
-
 let kuhaTangero = (papel) => {       
     if (papel[0] == "A") {       
         return 1;
