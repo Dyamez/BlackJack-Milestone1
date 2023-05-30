@@ -96,7 +96,7 @@ let umpisaLaro = () => {                                                        
         tumpokPik.src = "./assets/" + papel + ".png";       
      sumaTangero += kuhaSagot(papel);                
         unangBilang += kuhaTangero(papel);                 
-        document.getElementById("tangero").append(tumpokPik);     
+        document.getElementById("tangero").append(tumpokPik);
     }
     console.log (sumaTangero);     
 
@@ -108,7 +108,7 @@ let umpisaLaro = () => {                                                        
         baraha += kuhaTangero(papel);                 
         document.getElementById("etoNa").append(tumpokPik);
     }
-    console.log(akingBilang);                                               
+    //console.log(akingBilang);                                               
     document.getElementById("umpisa").addEventListener("click", palo);                                  //Button event Listener for start(palo) & draw(pirme)
     document.getElementById("kuha").addEventListener("click", pirme);    
 }
@@ -160,5 +160,18 @@ let pirme = () => {
         
         document.getElementById("sumaTangeroTutal").innerText = sumaTangero;    
         document.getElementById("barahaKo").innerText = akingBilang;        
-        document.getElementById("sugarol").innerText = mensahe;    
-    }
+        document.getElementById("sugarol").innerText = mensahe; 
+}
+
+/* PSEUDO
+var balance = 100;
+
+var betAmount = 10;
+      balance -= betAmount;
+
+var winAmount = 20; 
+      balance += winAmount;
+
+var balanceElement = document.getElementById("balance");
+      balanceElement.textContent = "$" + balance;
+*/
