@@ -160,5 +160,5 @@ let pirme = () => {
         
         document.getElementById("sumaTangeroTutal").innerText = sumaTangero;    
         document.getElementById("barahaKo").innerText = akingBilang;        
-        document.getElementById("sugarol").innerText = mensahe;         
+        document.getElementById("sugarol").innerText = mensahe;    
     }
