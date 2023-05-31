@@ -1,4 +1,8 @@
-window.onload = () => {latagan(), karambola(), umpisaLaro()}                                            // I made up most object names in my native tongue to be unique.
+window.onload = () => {
+    latagan(), 
+    karambola(), 
+    umpisaLaro()
+}                                                                                                       // I made up most object names in my native tongue to be unique.
 
 let tago; 
 let tumpok; 
@@ -11,14 +15,12 @@ let isMuted = false;
 const muteButton = document.getElementById('muteButton');
 const audio = document.getElementById('audio');
 let linya = {
-    isa: ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"],                            
+    isa: ["A", "2", "3", "4", "5", "6", "7", 
+    "8", "9", "10", "J", "Q", "K"],                            
     dalawa: ["C", "D", "H", "S"]
 }
-let refreshPage = () => {
-    location.reload();
-}
 
-  document.addEventListener('DOMContentLoaded', () => {                                                 //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
+document.addEventListener('DOMContentLoaded', () => {                                                 //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
     const audio = new Audio();
     audio.src = "assets/LightsOfLasVegas.mp3";
     audio.loop = true;
@@ -108,7 +110,7 @@ let umpisaLaro = () => {                                                        
         baraha += kuhaTangero(papel);                 
         document.getElementById("etoNa").append(tumpokPik);
     }
-    //console.log(akingBilang);                                               
+    console.log(akingBilang);                                               
     document.getElementById("umpisa").addEventListener("click", palo);                                  //Button event Listener for start(palo) & draw(pirme)
     document.getElementById("kuha").addEventListener("click", pirme);    
 }
@@ -162,8 +164,18 @@ let pirme = () => {
         document.getElementById("barahaKo").innerText = akingBilang;        
         document.getElementById("sugarol").innerText = mensahe; 
 }
+    
 
-/* PSEUDO
+  
+
+
+/* PSEUDO in progress logic
+
+<button id="f5" onclick="refreshPage()" type="button" class="btn btn-warning">New Game</button>
+let refreshPage = () => {
+    location.reload();
+}
+
 var balance = 100;
 
 var betAmount = 10;
@@ -174,4 +186,76 @@ var winAmount = 20;
 
 var balanceElement = document.getElementById("balance");
       balanceElement.textContent = "$" + balance;
-*/
+----------------------------------------------------------------------------
+function resetScores() {
+    
+patok = true;  
+sumaTangero = 0; 
+akingBilang = 0;  
+unangBilang = 0; 
+baraha = 0;  
+
+
+
+let sumaTangero = document.getElementById("tangero");
+while (sumaTangero.firstChild) {
+    sumaTangero.removeChild(sumaTangero.firstChild);
+}
+document.getElementById("sumaTangeroTutal").innerText = "";
+
+// Clear your cards and sum
+let akingBilang = document.getElementById("etoNa");
+while (akingBilang.firstChild) {
+    akingBilang.removeChild(akingBilang.firstChild);
+}
+document.getElementById("barahaKo").innerText = "";
+
+// Reset the hidden card and results message
+document.getElementById("tago").src = "";
+document.getElementById("sugarol").innerText = "";
+
+// Rebuild and shuffle the deck
+latagan(), 
+karambola(), 
+umpisaLaro()
+}
+console.log(resetScores())   
+
+ document.getElementById("umpisa").addEventListener("click", palo);
+    document.getElementById("kuha").addEventListener("click", pirme);
+    document.getElementById("sumaTotal").addEventListener("click", resetScores);
+
+---------------------------------------
+function updateMoney(amount, win) {
+    // Get the current money amount.
+    let currentMoney = localStorage.getItem("money");
+  
+    // If the player wins, add the amount to their money.
+    if (win) {
+      currentMoney += amount;
+    } else {
+      // If the player loses, subtract the amount from their money.
+      currentMoney -= amount;
+    }
+  
+    // Save the new money amount to localStorage.
+    localStorage.setItem("money", currentMoney);
+  }
+  
+  // Add the money system to the blackjack game.
+  window.onload = function() {
+    latagan(); 
+    karambola(); 
+    umpisaLaro();
+  
+    document.getElementById("umpisa").addEventListener("click", function() {
+      palo();
+      updateMoney(1, win);
+    });
+  
+    document.getElementById("kuha").addEventListener("click", function() {
+      pirme();
+      updateMoney(1, win);
+    });
+  }
+      */
