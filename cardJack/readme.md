@@ -29,5 +29,7 @@ Kenny Yip  https://www.youtube.com/watch?v=bMYCWccL-3U&t=1211s and JScode https:
 
 *emoji credit: https://emojipedia.org/
 
+*scrolling banner credit: https://designshack.net/articles/css/infinitephotobanner/
+
 *bugs: known issue, audio music (mp3) won't play on safari ios or android chrome browser served from javascript due to its limitations. 
     No issue on chrome or edge on windows. Not tested on Mac. https://stackoverflow.com/questions/2240710/how-to-get-mp3-files-to-play-in-iphone-safari-web-browser
