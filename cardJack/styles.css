@@ -1,6 +1,5 @@
 
 #pangalan {
-    padding-top: 25px;
     color: gold
 }
 
@@ -38,7 +37,7 @@ body {
     width: 200px;
     height: 70px;
     font-size: 25px;
-    margin-bottom: 20px
+    margin-bottom: 10px
 }
 
 #f5 {
@@ -48,19 +47,32 @@ body {
 }
 
 #sugarol {
-    color: rgb(236, 230, 64);
+    color: rgb(236, 230, 64)
 }
 
+#kanya {
+  color: black;
+}
 
+#iyo {
+  color: black
+}
 
- 
+#sumaTangeroTutal {
+  color:rgb(197, 20, 20)
+}
+
+#barahaKo {
+  color:rgb(197, 20, 20)
+}
+
 .rolling {                                              /** {margin: 0; padding: 0;} code idea credit: https://designshack.net/articles/css/infinitephotobanner/*/
     height: 200px;
     width: 3440px;
     margin-bottom: 1px;
    }
 
-   .first {
+   .gulong {
     -webkit-animation: smoothmotion 30s linear infinite;
        -moz-animation: smoothmotion 30s linear infinite;
         -ms-animation: smoothmotion 30s linear infinite;
@@ -73,7 +85,7 @@ body {
        margin-left: 0px;
     }
     100% {
-       margin-left: -2125px;
+       margin-left: -10000px;
     }
     
    }
@@ -83,7 +95,7 @@ body {
       margin-left: 0px;
     }
     100% {
-      margin-left: -2125px;
+      margin-left: -10000px;
     }
     
    }
@@ -93,7 +105,7 @@ body {
       margin-left: 0px;
     }
     100% {
-      margin-left: -2125px;
+      margin-left: -10000px;
     }
     
    }
@@ -103,7 +115,7 @@ body {
       margin-left: 0px;
     }
     100% {
-      margin-left: -2125px;
+      margin-left: -10000px;
     }
     
    }
@@ -113,7 +125,7 @@ body {
       margin-left: 0px;
     }
     100% {
-      margin-left: -2125px;
+      margin-left: -10000px;
     }
     
    } 

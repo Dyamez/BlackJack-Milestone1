@@ -21,39 +21,39 @@ let linya = {
 }
 
 document.addEventListener('DOMContentLoaded', () => {                                                 //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
-    const audio = new Audio();
-    audio.src = "assets/LightsOfLasVegas.mp3";
-    audio.loop = true;
-  
-    audio.addEventListener('canplaythrough', () => {
-      audio.play();
-      audio.volume = 0.4;
-    });
-    const muteButton = document.getElementById('muteButton');
-    let isMuted = false;
-  
-    muteButton.addEventListener('click', () => {
-      if (isMuted) {
-        audio.muted = false;
-        muteButton.textContent = 'Mute';
-      } else {
-        audio.muted = true;
-        muteButton.textContent = 'Unmute';
-      }
-      isMuted = !isMuted;
-    });
- });
-    muteButton.addEventListener('click', () => {
+  const audio = new Audio();
+  audio.src = "assets/LightsOfLasVegas.mp3";
+  audio.loop = true;
+
+  audio.addEventListener('canplaythrough', () => {
+    audio.play();
+    audio.volume = 0.4;
+  });
+  const muteButton = document.getElementById('muteButton');
+  let isMuted = false;
+
+  muteButton.addEventListener('click', () => {
     if (isMuted) {
-        audio.muted = false;
-        muteButton.textContent = 'Mute';
+      audio.muted = false;
+      muteButton.textContent = 'Mute';
     } else {
-        audio.muted = true;
-        muteButton.textContent = 'Unmute';
+      audio.muted = true;
+      muteButton.textContent = 'Unmute';
     }
     isMuted = !isMuted;
-    });
-    
+  });
+});
+  muteButton.addEventListener('click', () => {
+  if (isMuted) {
+      audio.muted = false;
+      muteButton.textContent = 'Mute';
+  } else {
+      audio.muted = true;
+      muteButton.textContent = 'Unmute';
+  }
+  isMuted = !isMuted;
+  });
+
     document.getElementById("kuha").addEventListener("click", () => {                                       //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
         const audio = document.getElementById("tunog1");                                                    //sound file snippets credit: https://mixkit.co/
         audio.volume = 0.4;
@@ -164,98 +164,3 @@ let pirme = () => {
         document.getElementById("barahaKo").innerText = akingBilang;        
         document.getElementById("sugarol").innerText = mensahe; 
 }
-    
-
-  
-
-
-/* PSEUDO in progress logic
-
-<button id="f5" onclick="refreshPage()" type="button" class="btn btn-warning">New Game</button>
-let refreshPage = () => {
-    location.reload();
-}
-
-var balance = 100;
-
-var betAmount = 10;
-      balance -= betAmount;
-
-var winAmount = 20; 
-      balance += winAmount;
-
-var balanceElement = document.getElementById("balance");
-      balanceElement.textContent = "$" + balance;
-----------------------------------------------------------------------------
-function resetScores() {
-    
-patok = true;  
-sumaTangero = 0; 
-akingBilang = 0;  
-unangBilang = 0; 
-baraha = 0;  
-
-
-
-let sumaTangero = document.getElementById("tangero");
-while (sumaTangero.firstChild) {
-    sumaTangero.removeChild(sumaTangero.firstChild);
-}
-document.getElementById("sumaTangeroTutal").innerText = "";
-
-// Clear your cards and sum
-let akingBilang = document.getElementById("etoNa");
-while (akingBilang.firstChild) {
-    akingBilang.removeChild(akingBilang.firstChild);
-}
-document.getElementById("barahaKo").innerText = "";
-
-// Reset the hidden card and results message
-document.getElementById("tago").src = "";
-document.getElementById("sugarol").innerText = "";
-
-// Rebuild and shuffle the deck
-latagan(), 
-karambola(), 
-umpisaLaro()
-}
-console.log(resetScores())   
-
- document.getElementById("umpisa").addEventListener("click", palo);
-    document.getElementById("kuha").addEventListener("click", pirme);
-    document.getElementById("sumaTotal").addEventListener("click", resetScores);
-
----------------------------------------
-function updateMoney(amount, win) {
-    // Get the current money amount.
-    let currentMoney = localStorage.getItem("money");
-  
-    // If the player wins, add the amount to their money.
-    if (win) {
-      currentMoney += amount;
-    } else {
-      // If the player loses, subtract the amount from their money.
-      currentMoney -= amount;
-    }
-  
-    // Save the new money amount to localStorage.
-    localStorage.setItem("money", currentMoney);
-  }
-  
-  // Add the money system to the blackjack game.
-  window.onload = function() {
-    latagan(); 
-    karambola(); 
-    umpisaLaro();
-  
-    document.getElementById("umpisa").addEventListener("click", function() {
-      palo();
-      updateMoney(1, win);
-    });
-  
-    document.getElementById("kuha").addEventListener("click", function() {
-      pirme();
-      updateMoney(1, win);
-    });
-  }
-      */
