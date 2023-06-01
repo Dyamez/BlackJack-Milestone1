@@ -5,6 +5,7 @@
 
 #muteButton {
     width: 100px;
+    z-index: -1;
 }
 
 body {
@@ -127,5 +128,13 @@ body {
     100% {
       margin-left: -10000px;
     }
-    
-   } 
+} 
+
+.tenor-gif-embed {
+ text-align: start;
+  bottom: 0;
+  left: -1000px;
+  height: 400px;
+  width: 500px;
+  z-index: -1;
+}
