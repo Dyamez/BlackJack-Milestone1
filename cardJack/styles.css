@@ -10,9 +10,12 @@
 
 body {
     text-align: center;
-    background-image: url("/assets/pic2.jpeg");
     background-size: cover;
-    color: white
+    color: white;
+    background-image: url("assets/pic2.jpeg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
 }
 
 #etoNa img {
