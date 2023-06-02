@@ -166,26 +166,21 @@ let pirme = () => {
 }
 
 const item = document.getElementById('chip');
-        var x = 0;
-        var y = 0;
-        var vx = 2; 
-        var vy = 2; 
-
-        function animate() {
+        let x = 0;
+        let y = 0;
+        let vx = 2; 
+        let vy = 2; 
+const animate = () => {
             x += vx;
             y += vy;
-
-            if (x + item.offsetWidth >= window.innerWidth || x <= 0) {
+    if (x + item.offsetWidth >= window.innerWidth || x <= 0) {
                 vx = -vx; 
             }
-            if (y + item.offsetHeight >= window.innerHeight || y <= 0) {
+     if (y + item.offsetHeight >= window.innerHeight || y <= 0) {
                 vy = -vy; 
             }
-
-            item.style.left = x + 'px';
-            item.style.top = y + 'px';
-
-            requestAnimationFrame(animate);
+    item.style.left = x + 'px';
+    item.style.top = y + 'px';
+    requestAnimationFrame(animate);
         }
-
-        animate();
+    animate();
