@@ -165,22 +165,22 @@ let pirme = () => {
         document.getElementById("sugarol").innerText = mensahe; 
 }
 
-const item = document.getElementById('chip');
+const bagay = document.getElementById('chip');                                                                                           //gif bouncing script reference https://javascript.info/js-animation
         let x = 0;
         let y = 0;
         let vx = 2; 
         let vy = 2; 
-const animate = () => {
+const kilos = () => {
             x += vx;
             y += vy;
-    if (x + item.offsetWidth >= window.innerWidth || x <= 0) {
+    if (x + bagay.offsetWidth >= window.innerWidth || x <= 0) {
                 vx = -vx; 
             }
-     if (y + item.offsetHeight >= window.innerHeight || y <= 0) {
+     if (y + bagay.offsetHeight >= window.innerHeight || y <= 0) {
                 vy = -vy; 
             }
-    item.style.left = x + 'px';
-    item.style.top = y + 'px';
-    requestAnimationFrame(animate);
+    bagay.style.left = x + 'px';
+    bagay.style.top = y + 'px';
+    requestAnimationFrame(kilos);
         }
-    animate();
+    kilos()
