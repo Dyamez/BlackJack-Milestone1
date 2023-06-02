@@ -149,7 +149,7 @@ let tumpokPik = document.createElement("img");
     if (bawasTungga(akingBilang, baraha) > 21) {            
      patok = false;                                     
     }
-    kilos()
+    kilos();                                                                                                                                 //intitiates movement of bouncing gif
 }
 
 let pirme = () => {                                                       
@@ -164,6 +164,8 @@ let pirme = () => {
         document.getElementById("sumaTangeroTutal").innerText = sumaTangero;    
         document.getElementById("barahaKo").innerText = akingBilang;        
         document.getElementById("sugarol").innerText = mensahe; 
+
+        kilos2()
 }
 
 const bagay = document.getElementById('chip');                                                                                           //gif bouncing script reference https://javascript.info/js-animation
@@ -185,5 +187,37 @@ const kilos = () => {
     bagay.style.top = y + 'px';
         
     requestAnimationFrame(kilos);
-        }   
-    //kilos()
+}   
+
+//
+
+const bagay2 = document.getElementById('chip2');                                                                                           //gif bouncing script reference https://javascript.info/js-animation
+        let v = 0;
+        let w = 0;
+        let vv = 2; 
+        let vw = 2;
+
+        
+
+const kilos2 = () => {
+            v += vv;
+            w += vw;
+    if (v + bagay2.offsetWidth >= window.innerWidth || v <= 0) {
+                vv = -vv; 
+            }
+     if (w + bagay2.offsetHeight >= window.innerHeight || w <= 0) {
+                vw = -vw; 
+            }
+    bagay2.style.left = v + 'px';
+    bagay2.style.top = w + 'px';
+        
+    requestAnimationFrame(kilos2);
+}
+ /*  
+bagay2.addEventListener("click", () => {
+    bagay2.style.display = "block";})
+
+    bagay2.addEventListener("click", () => {
+        bagay2.style.transform = "translateX(200px)";
+      });
+      */
