@@ -169,7 +169,8 @@ const bagay = document.getElementById('chip');                                  
         let x = 0;
         let y = 0;
         let vx = 2; 
-        let vy = 2; 
+        let vy = 2;
+
 const kilos = () => {
             x += vx;
             y += vy;
@@ -181,6 +182,7 @@ const kilos = () => {
             }
     bagay.style.left = x + 'px';
     bagay.style.top = y + 'px';
+        
     requestAnimationFrame(kilos);
-        }
+        }   
     kilos()
