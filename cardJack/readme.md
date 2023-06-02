@@ -1,3 +1,5 @@
+Milestone Project 1 by E. Manansala, for JS Class 10.
+
 A simple java game of Blackjack.
 Player closest to 21 wins. Going over 21, dealer or player loses.
 
@@ -14,7 +16,7 @@ The 'Hit Me!' button is to deal cards for the player, which just continues even 
 
 *I had cited some references that gave me an idea of how to properly construct some codes as problems arose.
 
-*Most are learned form the JS course here on Class10 such as         declarations, functions, refactoring etc...
+*Most are learned form the JS course here on Class10 such as declarations, functions, refactoring etc...
     otherwise citations are made from other sources.
 
 *Background photo used in this project is mine and was taken with my phone. '😉' 
@@ -33,4 +35,4 @@ Kenny Yip  https://www.youtube.com/watch?v=bMYCWccL-3U&t=1211s and JScode https:
 *title font: https://fontmeme.com/
 
 *bugs: known issue, audio music (mp3) won't play on safari ios or android chrome browser served from javascript due to its limitations. 
-    No issue on chrome or edge on windows. Not tested on Mac. https://stackoverflow.com/questions/2240710/how-to-get-mp3-files-to-play-in-iphone-safari-web-browser
+    No issue on chrome or edge on windows. Not tested on Mac. https://stackoverflow.com/questions/2240710/how-to-get-mp3-files-to-play-in-iphone-safari-web-browser.

@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">      <!-- Was trying to implement bootstrap CSS, but had to prioritize my local CSS as I am still learning bootstrap5-->
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">                              <!-- Was trying to implement bootstrap CSS, but had to prioritize my local CSS as I am still learning bootstrap5-->
     <link rel="stylesheet" href="styles.css">                                                                           
     <title>Milestone Blackjack Class 10</title>
 </head>
 <body>
+  <div class="container">
     <div class="d-flex justify-content-end"><button id="muteButton" type="button" class="btn btn-danger btn-sm">Music Off</button></div>
-     <div class="container">
+    <div id="chip">
+      <iframe src="https://giphy.com/embed/3ov9jUCYetT3GVwcy4" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen>   <!-- bouncing object referenced at https://css-tricks.com/bounce-element-around-viewport-in-css/ -->
+      </iframe><p><a href="https://giphy.com/gifs/player-poker-bet-3ov9jUCYetT3GVwcy4"></a></p></div>
       <div class="text-white">
       <h1 id="pangalan"><a href="https://fontmeme.com/japanese/">
-      <img src="https://fontmeme.com/permalink/230601/3c41a136b426c3dfddaa0cc966ef0c71.png" alt="blackjack logo font"></a></h1></p> <!--font source: https://fontmeme.com/-->
-    <h3 id="talata">Try your Luck, Stranger!</h3>
+      <img src="https://fontmeme.com/permalink/230601/3c41a136b426c3dfddaa0cc966ef0c71.png" alt="blackjack logo font"></a></h1></p>             <!--font source: https://fontmeme.com/-->
+      <h3 id="talata">Try your Luck, Stranger!</h3>
       <h3 id="kanya">💵 Boss Card: <span id="sumaTangeroTutal"></span></h3>                                                   
         
         <p id="tangero">
@@ -23,22 +26,25 @@
           </p>
           <h3 id="iyo">🃏 Your Card: <span id="barahaKo"></span></h3>
             <p id="etoNa"></p>
-            
             <p id="bioData"></p>
 
           <button id="umpisa" type="button" class="btn btn-primary btn-lg"><span>Hit Me!</span></button>
           <br>
           <button id="kuha" type="button" class="btn btn-success btn-lg">Stay</button>
-          <br>
           <form>
-            <input id="f5" value="New Game" onclick="history.go(0)" type="button">                                              <!--'History.go() method' = https://developer.mozilla.org/en-US/docs/Web/API/History/go-->
+            <input id="f5" value="New Game" onclick="history.go(0)" type="button">                                                                <!--'History.go() method' = https://developer.mozilla.org/en-US/docs/Web/API/History/go-->
           </form>
-          
-          <h3 id="sumaTotal">Result:</h3>
+          <h3 id="sumaTotal"></h3>
           <h2 id="sugarol"></h2>
           
     <h6><p>Press the top button to start the game</p>
     <p>Press the 'Stay' button to reveal the dealers cards</p></h6>
+    </div>
+    </div>
+    </div>
+
+    <audio id="tunog1" src="assets/bonus.wav"></audio>
+    <audio id="tunog2" src="assets/bell.wav"></audio>
 
     <div class="rolling">
       <img class="gulong" src="./assets/12-C.png">
@@ -60,18 +66,10 @@
       <img src="./assets/16-C.png">
       <img src="./assets/16-D.png">
       <img src="./assets/16-H.png">
-      <img src="./assets/16-S.png">      
-    </div>
-    </div>
-    </div>
-     
-    <audio id="tunog1" src="assets/bonus.wav"></audio>
-    <audio id="tunog2" src="assets/bell.wav"></audio>
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>   
+      <img src="./assets/16-S.png">  
+      
+      <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>   
 </body>
 </html>
-<!-- 
-  <p><div class="tenor-gif-embed" data-postid="19232324" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/magic-gif-19232324">Magic GIF</a>from <a href="https://tenor.com/search/magic-gifs">Magic GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
--->

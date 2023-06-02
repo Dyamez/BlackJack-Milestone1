@@ -4,8 +4,8 @@
 }
 
 #muteButton {
+    height: 30px;
     width: 100px;
-    z-index: -1;
 }
 
 body {
@@ -70,7 +70,7 @@ body {
   color:rgb(197, 20, 20)
 }
 
-.rolling {                                              /** {margin: 0; padding: 0;} code idea credit: https://designshack.net/articles/css/infinitephotobanner/*/
+.rolling {                                              /*code idea credit: https://designshack.net/articles/css/infinitephotobanner/  */
     height: 200px;
     width: 3440px;
     margin-bottom: 1px;
@@ -133,11 +133,10 @@ body {
     }
 } 
 
-.tenor-gif-embed {
- text-align: start;
-  bottom: 0;
-  left: -1000px;
-  height: 400px;
-  width: 500px;
+#chip {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
   z-index: -1;
 }

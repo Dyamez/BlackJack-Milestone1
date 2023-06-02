@@ -56,13 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {                           
 
     document.getElementById("kuha").addEventListener("click", () => {                                       //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
         const audio = document.getElementById("tunog1");                                                    //sound file snippets credit: https://mixkit.co/
-        audio.volume = 0.4;
+        audio.volume = 0.3;
         audio.play();
       });
 
     document.getElementById("umpisa").addEventListener("click", () => { 
         const audio = document.getElementById("tunog2");
-        audio.volume = 0.4;
+        audio.volume = 0.3;
         audio.play()
     })
       
@@ -164,3 +164,28 @@ let pirme = () => {
         document.getElementById("barahaKo").innerText = akingBilang;        
         document.getElementById("sugarol").innerText = mensahe; 
 }
+
+const item = document.getElementById('chip');
+        var x = 0;
+        var y = 0;
+        var vx = 2; 
+        var vy = 2; 
+
+        function animate() {
+            x += vx;
+            y += vy;
+
+            if (x + item.offsetWidth >= window.innerWidth || x <= 0) {
+                vx = -vx; 
+            }
+            if (y + item.offsetHeight >= window.innerHeight || y <= 0) {
+                vy = -vy; 
+            }
+
+            item.style.left = x + 'px';
+            item.style.top = y + 'px';
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
