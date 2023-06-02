@@ -12,7 +12,8 @@ The 'Hit Me!' button is to deal cards for the player, which just continues even 
     
 *Inspired to make such a card game as it was one of the first tutorial I followed learning java on my own prior to this bootcamp.
 
-*Variables/codes have been written in 'Tagalog' words which i found to aid me in further learning coding in general.
+*Variables/codes have been written in 'Filipino' words which i found to aid me in further learning coding in general.
+    Rough translation provided at 'assets/translation.txt' if needed.
 
 *I had cited some references that gave me an idea of how to properly construct some codes as problems arose.
 

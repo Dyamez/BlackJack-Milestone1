@@ -149,6 +149,7 @@ let tumpokPik = document.createElement("img");
     if (bawasTungga(akingBilang, baraha) > 21) {            
      patok = false;                                     
     }
+    kilos()
 }
 
 let pirme = () => {                                                       
@@ -185,4 +186,4 @@ const kilos = () => {
         
     requestAnimationFrame(kilos);
         }   
-    kilos()
+    //kilos()
