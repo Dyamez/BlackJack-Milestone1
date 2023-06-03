@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {                           
     audio.play();
     audio.volume = 0.4;
   });
+  
   const muteButton = document.getElementById('muteButton');
   let isMuted = false;
 
@@ -189,15 +190,11 @@ const kilos = () => {
     requestAnimationFrame(kilos);
 }   
 
-//
-
 const bagay2 = document.getElementById('chip2');                                                                                           //gif bouncing script reference https://javascript.info/js-animation
         let v = 0;
         let w = 0;
         let vv = 2; 
         let vw = 2;
-
-        
 
 const kilos2 = () => {
             v += vv;
@@ -213,11 +210,3 @@ const kilos2 = () => {
         
     requestAnimationFrame(kilos2);
 }
- /*  
-bagay2.addEventListener("click", () => {
-    bagay2.style.display = "block";})
-
-    bagay2.addEventListener("click", () => {
-        bagay2.style.transform = "translateX(200px)";
-      });
-      */
