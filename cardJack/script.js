@@ -1,3 +1,4 @@
+//loads my functions on start
 window.onload = () => {
     latagan(), 
     karambola(), 
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {                           
     audio.play();
     audio.volume = 0.4;
   });
-  
+  //mutes the background music
   const muteButton = document.getElementById('muteButton');
   let isMuted = false;
 
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {                           
   }
   isMuted = !isMuted;
   });
-
+  
     document.getElementById("kuha").addEventListener("click", () => {                                       //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
         const audio = document.getElementById("tunog1");                                                    //sound file snippets credit: https://mixkit.co/
         audio.volume = 0.3;
@@ -88,7 +89,7 @@ let karambola = () => {
     }
     console.log(tumpok);  
 }
-
+//starts the game
 let umpisaLaro = () => {                                                                                // I prefer the arrow function rather than the usual function.
     tago = tumpok.pop(); 
     sumaTangero += kuhaSagot(tago); 
@@ -115,19 +116,19 @@ let umpisaLaro = () => {                                                        
     document.getElementById("umpisa").addEventListener("click", palo);                                  //Button event Listener for start(palo) & draw(pirme)
     document.getElementById("kuha").addEventListener("click", pirme);    
 }
-    
+ //split the card array named in my assets to value & type
 let kuhaSagot = (papel) => {
     let halaga = papel.split("-")[0];
     return isNaN(halaga) ? (halaga == "A" ? 11 : 10) : parseInt(halaga);                                //parseInt() string to integer is a concept i dont recall being dicussed. I had to refer to several resources stated on my readMe such as kenny Yip, ChartJS and scrimba.
     };
-  
+ //Ace card logic 
 let kuhaTangero = (papel) => {       
     if (papel[0] == "A") {       
         return 1;
     }
     return 0;
 }
-
+//limits card drawn to 21 for player card
 let bawasTungga = (damiMo, damiNya) => {         
     while (damiMo > 21 && damiNya > 0) {      
         damiMo -= 10;                                
@@ -135,7 +136,7 @@ let bawasTungga = (damiMo, damiNya) => {
     }
     return damiMo;                                   
 }
-
+//hit logic 
 let palo = () => {        
     if (!patok) {      
         return;
@@ -150,9 +151,9 @@ let tumpokPik = document.createElement("img");
     if (bawasTungga(akingBilang, baraha) > 21) {            
      patok = false;                                     
     }
-    kilos();                                                                                                                                 //intitiates movement of bouncing gif
+    kilos();                                                                                                                                 //intitiates animation of bouncing image with 'hit' button.
 }
-
+//stay logic
 let pirme = () => {                                                       
         sumaTangero -= unangBilang;
         akingBilang -= baraha;
@@ -166,10 +167,10 @@ let pirme = () => {
         document.getElementById("barahaKo").innerText = akingBilang;        
         document.getElementById("sugarol").innerText = mensahe; 
 
-        kilos2()
+        kilos2()                                                                                                                            //image animation with 'stay' button.
 }
 
-const bagay = document.getElementById('chip');                                                                                           //gif bouncing script reference https://javascript.info/js-animation
+const bagay = document.getElementById('chip');                                                                                              //gif bouncing script reference https://javascript.info/js-animation
         let x = 0;
         let y = 0;
         let vx = 2; 
@@ -190,7 +191,7 @@ const kilos = () => {
     requestAnimationFrame(kilos);
 }   
 
-const bagay2 = document.getElementById('chip2');                                                                                           //gif bouncing script reference https://javascript.info/js-animation
+const bagay2 = document.getElementById('chip2');                                                                                            //gif bouncing script reference https://javascript.info/js-animation
         let v = 0;
         let w = 0;
         let vv = 2; 
