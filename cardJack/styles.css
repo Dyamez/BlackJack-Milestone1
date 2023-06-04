@@ -70,7 +70,7 @@ body {
   color:rgb(197, 20, 20)
 }
 
-.rolling {                                              /*code idea credit: https://designshack.net/articles/css/infinitephotobanner/  */
+.rolling {                                              /*reference credit: https://designshack.net/articles/css/infinitephotobanner/  */
     height: 200px;
     width: 3440px;
     margin-bottom: 1px;

@@ -3,7 +3,7 @@ window.onload = () => {
     latagan(), 
     karambola(), 
     umpisaLaro()
-}                                                                                                       // I made up most object names in my native tongue to be unique.
+}                                                                                                  // I made up most object names in my native tongue to be unique. 'assets/translation.txt' available for reference. 
 
 let tago; 
 let tumpok; 
@@ -21,7 +21,7 @@ let linya = {
     dalawa: ["C", "D", "H", "S"]
 }
 
-document.addEventListener('DOMContentLoaded', () => {                                                 //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
+document.addEventListener('DOMContentLoaded', () => {                                               //loads music on page load from assets folder. Lights of Las Vegas by Yuri Sazonoff, 2010.
   const audio = new Audio();
   audio.src = "assets/LightsOfLasVegas.mp3";
   audio.loop = true;
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {                           
   isMuted = !isMuted;
   });
   
-    document.getElementById("kuha").addEventListener("click", () => {                                       //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
-        const audio = document.getElementById("tunog1");                                                    //sound file snippets credit: https://mixkit.co/
+    document.getElementById("kuha").addEventListener("click", () => {                                  //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
+        const audio = document.getElementById("tunog1");                                               //sound file snippets credit: https://mixkit.co/
         audio.volume = 0.3;
         audio.play();
       });
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {                           
     })
       
 let latagan = () => {                                                                                   //this function sets the card assets, then pushes it into the card array I defined here as 'tumpok'. 
-    tumpok = [];                                                                                        // card assets taken from https://github.com/ImKennyYip/black-jack/tree/master/cards
+    tumpok = [];                                                                                        // card assets credit, https://github.com/ImKennyYip/black-jack/tree/master/cards
     let uri = linya.isa;
     let kahulugan = linya.dalawa;
     for (let i = 0; i < kahulugan.length; i++) {                                                        // The video allowed me to understand how to set up numerous items for it to be passed on to my randomise function 'karambola'
@@ -81,7 +81,7 @@ let latagan = () => {                                                           
 }
 
 let karambola = () => { 
-    for (let i = 0; i < tumpok.length; i++) {                                                           // the idea of using for loops was discussed in class and is applied here, but for me to round of numbers with 'Math.floor', I referred to in scrimba. https://scrimba.com/playlist/p3py7U7
+    for (let i = 0; i < tumpok.length; i++) {                                                           // the idea of using 'for loops' was discussed in class and is applied here, but for me to round of numbers with 'Math.floor', I referred to in scrimba. https://scrimba.com/playlist/p3py7U7
         let x = Math.floor(Math.random() * tumpok.length); 
         let epal = tumpok[i]; 
         tumpok[i] = tumpok[x]; 
