@@ -45,9 +45,10 @@ body {
 }
 
 #f5 {
-    margin-bottom: 15px;
-    height: 30px;
+    height: 40px;
     width: 200px;
+    color: black;
+    font-weight: bolder;
 }
 
 #sugarol {
@@ -56,6 +57,7 @@ body {
 
 #kanya {
   color: black;
+  padding-top: 10px;
 }
 
 #iyo {
@@ -63,11 +65,16 @@ body {
 }
 
 #sumaTangeroTutal {
-  color:rgb(197, 20, 20)
+  color:rgb(197, 20, 20);
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #barahaKo {
-  color:rgb(197, 20, 20)
+  color:rgb(197, 20, 20);
+  height: 30px;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .rolling {                                              /*reference credit: https://designshack.net/articles/css/infinitephotobanner/  */
