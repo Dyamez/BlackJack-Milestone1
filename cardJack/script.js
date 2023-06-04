@@ -76,7 +76,7 @@ apat  =  () => {
   };
 
 lima =  () => {                                  
-    const audio = document.getElementById("tunog3");                                               
+    const audio = document.getElementById("tunog5");                                               
     audio.volume = 0.7;
     audio.play();
   };
