@@ -22,7 +22,7 @@ The 'Hit Me!' button is to deal cards for the player, which just continues even 
 
 *Background photo used in this project is mine and was taken with my phone. '😉' 
 
-*sound files snippets credit: https://mixkit.co/
+*sound files snippets credit: https://mixkit.co/ & https://elements.envato.com/
  Music credit: Lights of Las Vegas by Yuri Sazonoff, 2010.
 
 *concept linking audio file referenced from https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click

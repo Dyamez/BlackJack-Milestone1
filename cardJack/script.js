@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {                           
     isMuted = !isMuted;
   });
 });
-  muteButton.addEventListener('click', () => {
+
+muteButton.addEventListener('click', () => {
   if (isMuted) {
       audio.muted = false;
       muteButton.textContent = 'Mute';
@@ -56,17 +57,29 @@ document.addEventListener('DOMContentLoaded', () => {                           
   isMuted = !isMuted;
   });
   
-    document.getElementById("kuha").addEventListener("click", () => {                                  //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
-        const audio = document.getElementById("tunog1");                                               //sound file snippets credit: https://mixkit.co/
-        audio.volume = 0.3;
-        audio.play();
-      });
-
-    document.getElementById("umpisa").addEventListener("click", () => { 
-        const audio = document.getElementById("tunog2");
+document.getElementById("umpisa").addEventListener("click", () => {                                //adding audio I referred to https://stackoverflow.com/questions/18826147/javascript-audio-play-on-click and just went on from there.
+        const audio = document.getElementById("tunog2");                                                //sound file snippets credit: https://mixkit.co/ & https://elements.envato.com/
         audio.volume = 0.3;
         audio.play()
     })
+
+tatlo =  () => {                                  
+    const audio = document.getElementById("tunog3");                                               
+    audio.volume = 0.8;
+    audio.play();
+  };
+
+apat  =  () => {                                  
+    const audio = document.getElementById("tunog4");                                               
+    audio.volume = 0.7;
+    audio.play();
+  };
+
+lima =  () => {                                  
+    const audio = document.getElementById("tunog3");                                               
+    audio.volume = 0.7;
+    audio.play();
+  };
       
 let latagan = () => {                                                                                   //this function sets the card assets, then pushes it into the card array I defined here as 'tumpok'. 
     tumpok = [];                                                                                        // card assets credit, https://github.com/ImKennyYip/black-jack/tree/master/cards
@@ -163,11 +176,16 @@ let pirme = () => {
             akingBilang === sumaTangero ? "You are Even" : 
                 akingBilang > sumaTangero ? "You Win! Congratulations" : "Better luck next time, Stranger";
         
+        let ingay = akingBilang > 21 ? apat : sumaTangero > 21 ? tatlo :
+            akingBilang === sumaTangero ? lima :
+            akingBilang > sumaTangero ? tatlo : apat ;
+        
         document.getElementById("sumaTangeroTutal").innerText = sumaTangero;    
         document.getElementById("barahaKo").innerText = akingBilang;        
         document.getElementById("sugarol").innerText = mensahe; 
-
-        kilos2()                                                                                                                            //image animation with 'stay' button.
+        
+        kilos2();
+        ingay()                                                                                                                           //image animation with 'stay' button.
 }
 
 const bagay = document.getElementById('chip');                                                                                              //gif bouncing script reference https://javascript.info/js-animation

@@ -32,3 +32,6 @@ pirme = stay
 mensahe = message
 bagay = object
 kilos = move
+tatlo = three
+apat = four
+lima = five
