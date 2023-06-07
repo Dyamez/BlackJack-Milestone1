@@ -1,5 +1,7 @@
 Milestone Project 1 by E. Manansala, for JS Class 10.
 
+Deployed on Github-pages: https://dyamez.github.io/BlackJack-Milestone1/
+
 A simple java game of Blackjack.
 Player closest to 21 wins. Going over 21, dealer or player loses.
 
@@ -37,4 +39,5 @@ Kenny Yip  https://www.youtube.com/watch?v=bMYCWccL-3U&t=1211s and JScode https:
 *additional images: https://funandgames.org/web/wp-content/uploads/2018/03/Cards-de-1200x900.jpg, https://mma.prnewswire.com/media/1936753/ThriveDX_Logo.jpg?p=publish
 
 *bugs: known issue, audio music (mp3) won't play on safari ios or android chrome browser served from javascript due to its limitations. 
-    No issue on chrome or edge on windows. Not tested on Mac. https://stackoverflow.com/questions/2240710/how-to-get-mp3-files-to-play-in-iphone-safari-web-browser.
+    -No issue on chrome or edge on windows. Not tested on Mac. https://stackoverflow.com/questions/2240710/how-to-get-mp3-files-to-play-in-iphone-safari-web-browser.
+    -Music would load on page but could take several seconds. 
