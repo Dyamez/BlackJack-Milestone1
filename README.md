@@ -40,4 +40,4 @@ Kenny Yip  https://www.youtube.com/watch?v=bMYCWccL-3U&t=1211s and JScode https:
 
 *bugs: known issue, audio music (mp3) won't play on safari ios or android chrome browser served from javascript due to its limitations. 
     -No issue on chrome or edge on windows. Not tested on Mac. https://stackoverflow.com/questions/2240710/how-to-get-mp3-files-to-play-in-iphone-safari-web-browser.
-    -Music would load on page but could take several seconds. 
+    -Music would load on page but could take several seconds. Music must be manually allowed on certain browsers like firefox on the page settings for it to play.
