@@ -188,7 +188,7 @@ let pirme = () => {
         ingay()                                                                                                                           //image animation with 'stay' button.
 }
 
-const bagay = document.getElementById('chip');                                                                                              //gif bouncing script reference https://javascript.info/js-animation
+const bagay = document.getElementById('chip');                                                                                            //gif bouncing script reference https://javascript.info/js-animation
         let x = 0;
         let y = 0;
         let vx = 2; 
@@ -209,7 +209,7 @@ const kilos = () => {
     requestAnimationFrame(kilos);
 }   
 
-const bagay2 = document.getElementById('chip2');                                                                                            //gif bouncing script reference https://javascript.info/js-animation
+const bagay2 = document.getElementById('chip2');                                                                                            
         let v = 0;
         let w = 0;
         let vv = 2; 
