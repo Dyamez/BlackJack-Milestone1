@@ -10,7 +10,7 @@ The 'Hit Me!' button is to deal cards for the player, which just continues even 
 'Stay' button reveals the dealers hand.
 'new game' button refreshes the page to set up a fresh round.
 'mute/unmute' button on the upper top right for sound.
-    -All assets loaded when served through local host server by way of vsCode.
+    -All assets loaded when served through local host server by way of vsCode. 
     
 *Inspired to make such a card game as it was one of the first tutorial I followed learning java on my own prior to this bootcamp.
 
@@ -38,6 +38,8 @@ Kenny Yip  https://www.youtube.com/watch?v=bMYCWccL-3U&t=1211s and JScode https:
 *title font: https://fontmeme.com/
 *additional images: https://funandgames.org/web/wp-content/uploads/2018/03/Cards-de-1200x900.jpg, https://mma.prnewswire.com/media/1936753/ThriveDX_Logo.jpg?p=publish
 
-*bugs: known issue, audio music (mp3) won't play on safari ios or android chrome browser served from javascript due to its limitations. 
+*bugs:
+    -Looked as intended on a 1440 monitor. Resolution below it might be better when out-zoomed.
+    - audio music (mp3) won't play on safari ios or android chrome browser served from javascript due to its limitations. 
     -No issue on chrome or edge on windows. Not tested on Mac. https://stackoverflow.com/questions/2240710/how-to-get-mp3-files-to-play-in-iphone-safari-web-browser.
     -Music would load on page but could take several seconds. Music must be manually allowed on certain browsers like firefox on the page settings for it to play.

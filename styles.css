@@ -1,7 +1,3 @@
-#pangalan {
-    color: gold
-}
-
 #muteButton {
     height: 30px;
     width: 100px;
@@ -19,13 +15,13 @@ body {
 
 #etoNa img {
     height: 200px;
-    width: 150px;
+    width: 140px;
     margin: 1px;
 }
 
 #tangero img {
     height: 200px;
-    width: 150px;
+    width: 140px;
     margin: 1px;
 }
 
